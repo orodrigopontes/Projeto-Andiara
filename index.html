@@ -348,29 +348,147 @@
                             </li>
                         </ul>
 
-                        <!-- Bloco Fechamento (Hook Escrito + CTA Primário) -->
-                        <div class="w-full bg-stone-100/50 p-6 md:p-8 rounded-3xl border border-white relative overflow-hidden flex flex-col gap-6 shadow-sm mt-4 lg:mt-0">
-                            <!-- Background Decorativo Subtil da caixa -->
-                            <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-[#C27A5B]/10 rounded-full blur-2xl pointer-events-none"></div>
+                    </div>
+                </div>
 
-                            <p class="text-2xl font-newsreader font-medium text-stone-900 italic text-center text-balance leading-snug">
-                                Descubra que você é amada. <br class="hidden sm:block">Descubra que você pertence.
-                            </p>
+                <!-- Bloco Fechamento (Hook Escrito + CTA Primário) Centralizado abaixo da seção -->
+                <div class="w-full max-w-2xl mx-auto bg-stone-100/50 p-6 md:p-8 md:py-10 rounded-3xl border border-white relative overflow-hidden flex flex-col gap-8 shadow-sm mt-16 lg:mt-24">
+                    <!-- Background Decorativo Subtil da caixa -->
+                    <div class="absolute -bottom-16 -right-16 w-64 h-64 bg-[#C27A5B]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-                            <!-- BOTÃO PRINCIPAL (Idêntico ao Hover Dinâmico da Hero) -->
-                            <button class="group relative w-full sm:w-auto self-center px-8 py-5 bg-stone-900 text-[#E6E3D6] rounded-full text-[15px] font-sans font-medium flex items-center justify-center gap-3 overflow-hidden shadow-xl shadow-stone-900/20 hover:-translate-y-1 transition-all duration-300 mt-2">
-                                <!-- Borda animada conic gradient (Hover Beam Effect) -->
-                                <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#E6E3D6_100%)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                <!-- Cobertura da borda interna -->
-                                <span class="absolute inset-[1px] bg-stone-800 rounded-full z-0 group-hover:bg-stone-900 transition-colors"></span>
-                                
-                                <span class="relative z-10 flex items-center gap-2"> 
-                                    Quero Ler "Filha Amada" 
-                                    <iconify-icon icon="solar:book-bookmark-linear" width="22" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></iconify-icon>
-                                </span>
-                            </button>
+                    <p class="text-2xl md:text-3xl font-newsreader font-medium text-stone-900 italic text-center text-balance leading-snug">
+                        Descubra que você é amada. <br class="hidden sm:block">Descubra que você pertence.
+                    </p>
+
+                    <!-- BOTÃO PRINCIPAL -->
+                    <button class="group relative w-full sm:w-auto self-center px-10 py-5 bg-stone-900 text-[#E6E3D6] rounded-full text-[15px] sm:text-base font-sans font-medium flex items-center justify-center gap-3 overflow-hidden shadow-xl shadow-stone-900/20 hover:-translate-y-1 transition-all duration-300">
+                        <!-- Borda animada conic gradient (Hover Beam Effect) -->
+                        <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#E6E3D6_100%)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                        <!-- Cobertura da borda interna -->
+                        <span class="absolute inset-[1px] bg-stone-800 rounded-full z-0 group-hover:bg-stone-900 transition-colors"></span>
+                        
+                        <span class="relative z-10 flex items-center gap-2"> 
+                            Quero Ler "Filha Amada" 
+                            <iconify-icon icon="solar:book-bookmark-linear" width="22" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></iconify-icon>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUARTA DOBRA: Palestras e Eventos (A Experiência Ao Vivo) -->
+        <section id="eventos" class="relative w-full bg-[#312c29] py-24 lg:py-32 overflow-hidden">
+            <!-- Efeitos de Fundo (Glow suave) -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#C27A5B] rounded-full blur-[120px] opacity-15"></div>
+                <div class="absolute bottom-10 -left-20 w-80 h-80 bg-[#453831] rounded-full blur-[100px] opacity-40"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col gap-20">
+                
+                <!-- Cabeçalho da Seção -->
+                <div class="w-full max-w-3xl mx-auto text-center [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll flex flex-col items-center">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm shadow-sm">
+                        <iconify-icon icon="solar:ticket-sale-bold-duotone" width="18" class="text-[#C27A5B]"></iconify-icon>
+                        <span class="text-xs font-sans font-semibold tracking-widest text-[#E6E3D6] uppercase">A Experiência Ao Vivo</span>
+                    </div>
+                    
+                    <p class="text-lg md:text-xl text-stone-400 font-sans leading-relaxed text-balance">
+                        Andiara promove encontros presenciais criados para ser um refúgio de acolhimento e um ponto de virada na reconstrução da identidade feminina. São momentos poderosos de comunhão, reflexão e cura.
+                    </p>
+                </div>
+
+                <!-- Cards dos Encontros (Grid 2 colunas com staggered Layout leve) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll relative">
+                    
+                    <!-- Cards removidos o elemento de linha tracejada decorativa -->
+
+                    <!-- Card 1: Adolescentes -->
+                    <div class="group relative bg-[#453831]/20 backdrop-blur-md border border-white/5 p-8 md:p-12 rounded-3xl overflow-hidden hover:bg-[#453831]/40 transition-colors duration-500 flex flex-col justify-start z-10">
+                        <!-- Ornamento de Fundo Hover -->
+                        <div class="absolute -top-16 -right-16 w-32 h-32 bg-[#C27A5B] rounded-full blur-[50px] opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none"></div>
+                        
+                        <div class="w-16 h-16 rounded-2xl bg-[#312c29]/80 border border-white/10 flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 group-hover:border-[#C27A5B]/30">
+                            <iconify-icon icon="solar:heart-pulse-bold-duotone" width="32" class="text-[#C27A5B]"></iconify-icon>
                         </div>
                         
+                        <h3 class="text-2xl lg:text-3xl font-newsreader text-[#EAE8DE] font-medium mb-5 group-hover:text-white transition-colors">
+                            1º Encontro de Adolescentes <span class="block text-xl md:text-2xl text-[#C27A5B] mt-2 font-sans italic tracking-wide">Filha Amada</span>
+                        </h3>
+                        
+                        <p class="text-stone-400 font-sans leading-relaxed text-base md:text-lg flex-1 group-hover:text-stone-300 transition-colors">
+                            Focado nas descobertas e inseguranças da adolescência. Uma tarde para ensinar às meninas que sua verdadeira identidade não está nas redes sociais ou na opinião dos outros, mas no amor inabalável de Deus. Um momento para curar feridas do coração antes que elas se tornem cicatrizes profundas.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Mulheres -->
+                    <div class="group relative bg-[#453831]/20 backdrop-blur-md border border-white/5 p-8 md:p-12 rounded-3xl overflow-hidden hover:bg-[#453831]/40 transition-colors duration-500 flex flex-col justify-start mt-4 lg:mt-16 z-10">
+                        <!-- Ornamento de Fundo Hover -->
+                        <div class="absolute -bottom-16 -left-16 w-32 h-32 bg-[#9EA08F] rounded-full blur-[50px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"></div>
+                        
+                        <div class="w-16 h-16 rounded-2xl bg-[#312c29]/80 border border-white/10 flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 group-hover:border-[#C27A5B]/30">
+                            <iconify-icon icon="solar:crown-star-bold-duotone" width="32" class="text-[#C27A5B]"></iconify-icon>
+                        </div>
+                        
+                        <h3 class="text-2xl lg:text-3xl font-newsreader text-[#EAE8DE] font-medium mb-5 group-hover:text-white transition-colors">
+                            2º Encontro de Mulheres <span class="block text-xl md:text-2xl text-[#C27A5B] mt-2 font-sans italic tracking-wide">Filha Amada</span>
+                        </h3>
+                        
+                        <p class="text-stone-400 font-sans leading-relaxed text-base md:text-lg flex-1 group-hover:text-stone-300 transition-colors">
+                            Uma experiência voltada para mulheres que carregam dores silenciosas. Sob o tema "Identidade, Valor e Pertencimento", este encontro presencial é um espaço de acolhimento e cura, criado para que você se reconecte com sua essência e lembre-se: você é chamada para viver como uma filha amada, restaurada e livre em Cristo.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Galeria de Experiência Visual (Grid Automático - Disposição Mosaico Restaurada) -->
+                <div class="w-full [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
+                    
+                    <div class="flex items-center justify-between mb-10">
+                        <h4 class="text-xs md:text-sm font-sans font-semibold text-[#EAE8DE] uppercase tracking-[0.2em]">Registros dos Encontros</h4>
+                        <div class="h-px bg-white/10 flex-1 ml-6 lg:ml-10"></div>
+                    </div>
+
+                    <!-- CSS Grid Mosaico Dinâmico 4x2 na LG, 2x... na SM -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 auto-rows-[180px] md:auto-rows-[240px]">
+                        
+                        <!-- Imagem 1 (Larga) -->
+                        <div class="col-span-2 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
+                            <div class="absolute inset-0 bg-stone-900/40 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                            <img src="Assets/Foto2.jpeg" alt="Auditório Cheio - Andiara" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] mix-blend-luminosity hover:mix-blend-normal blur-[1px] group-hover:blur-none"/>
+                        </div>
+                        
+                        <!-- Imagem 2 (Normal) -->
+                        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
+                            <div class="absolute inset-0 bg-[#C27A5B]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                            <img src="Assets/Foto1.jpeg" alt="Momento de Oração - Andiara" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
+                        </div>
+
+                        <!-- Imagem 3 (Alta - Ocupa 2 linhas em telas maiores) -->
+                        <div class="col-span-1 row-span-2 hidden md:block rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
+                            <div class="absolute inset-0 bg-stone-900/60 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                            <img src="Assets/Foto2.jpeg" alt="Abraço - Encontro Filha Amada" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] opacity-80 hover:opacity-100 object-top"/>
+                        </div>
+
+                        <!-- Imagem 4 (Normal) -->
+                        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
+                            <div class="absolute inset-0 bg-[#453831]/40 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                            <img src="Assets/Foto1.jpeg" alt="Mulheres Sorrindo" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
+                        </div>
+
+                        <!-- Imagem 5 (Larga) -->
+                        <div class="col-span-2 md:col-span-2 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
+                            <div class="absolute inset-0 bg-stone-900/50 group-hover:bg-stone-900/10 transition-colors duration-500 z-10 pointer-events-none"></div>
+                            <img src="Assets/Foto2.jpeg" alt="Andiara no Palco" class="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] opacity-90 hover:opacity-100 object-center"/>
+                        </div>
+
+                        <!-- Imagem 6 (Normal - Mobile apenas) -->
+                        <div class="col-span-1 row-span-1 md:hidden rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
+                            <div class="absolute inset-0 bg-[#C27A5B]/30 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                            <img src="Assets/Foto1.jpeg" alt="Emoção" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
+                        </div>
+
                     </div>
                 </div>
 
