@@ -23,16 +23,16 @@
 
         @keyframes pulseText {
             0% { opacity: 0.15; transform: scale(0.97); }
-            50% { opacity: 1; transform: scale(1.03); text-shadow: 0 0 20px rgba(139, 94, 65, 0.4); }
+            50% { opacity: 1; transform: scale(1.01); text-shadow: 0 0 15px rgba(139, 94, 65, 0.2); }
             100% { opacity: 0.15; transform: scale(0.97); }
         }
         .animate-pulse-text {
-            animation: pulseText 1.25s ease-in-out infinite;
+            animation: pulseText 1.5s ease-in-out infinite;
         }
 
         @keyframes fadeInOverlay {
             from { opacity: 0; backdrop-filter: blur(0px); }
-            to { opacity: 1; backdrop-filter: blur(12px); }
+            to { opacity: 1; backdrop-filter: blur(8px); }
         }
         .fade-in-active {
             display: flex !important;
@@ -50,38 +50,34 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
 
-    <!-- OVERLAY DE LOADING OCULTO (z-index: 9999) -->
+    <!-- OVERLAY DE LOADING OCULTO (Mais delicado) -->
     <div id="loadingOverlay" class="fixed inset-0 bg-[#EAE8DE]/95 z-[9999] hidden flex-col items-center justify-center" style="display: none;">
-        <div class="absolute inset-0 z-0 pointer-events-none opacity-40">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#C27A5B] rounded-full blur-[90px]"></div>
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[#C27A5B] rounded-full blur-[80px]"></div>
         </div>
-        <h2 class="relative z-10 text-4xl md:text-5xl lg:text-7xl font-newsreader font-medium tracking-widest text-stone-900 border-b border-[#8B5E41]/30 pb-4 animate-pulse-text text-center px-4">
-            ANDIARA PEREIRA
+        
+        <!-- Texto menor, fonte leve, espaçamento largo e bem elegante -->
+        <h2 class="relative z-10 text-2xl md:text-3xl lg:text-4xl font-newsreader font-light tracking-[0.3em] uppercase text-stone-800 animate-pulse-text text-center px-4">
+            Andiara Pereira
         </h2>
+        <div class="mt-4 w-12 h-px bg-[#8B5E41]/30"></div>
     </div>
 
     <!-- Background Ornaments (Global) -->
     <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#C27A5B]/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
 
-    <!-- MAIN - SPLIT LAYOUT (Bento Grid Unidicado por items-stretch) -->
-    <!-- `items-stretch` garante que a coluna ESQUERDA seja do mesmo tamanho exato da DIREITA -->
     <main class="w-full max-w-[85rem] mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row gap-8 lg:gap-10 relative z-10 min-h-screen items-center lg:items-stretch">
         
         <!-- COLUNA ESQUERDA (Card Fixo/Unificado) -->
-        <!-- O Card da esquerda é do exato tamanho do grid da direita -->
         <div class="w-full lg:w-[40%] flex flex-col justify-between bg-[#F2EFE8] border border-white/60 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3rem] shadow-xl relative overflow-hidden group">
             
-            <!-- Imagem Mesclada no Fundo Superior -->
             <div class="absolute inset-x-0 top-0 h-[60%] lg:h-[65%] overflow-hidden pointer-events-none">
-                <!-- Fundo abstrato "splash" atrás da foto -->
                 <div class="absolute inset-0 opacity-80" style="background: radial-gradient(circle at center, rgba(194,122,91,0.2) 0%, transparent 70%);"></div>
                 <img src="Assets/Foto2.jpeg" alt="Andiara Pereira Fundo" class="w-full h-full object-cover object-top mask-image-gradient group-hover:scale-105 transition-transform duration-[1.5s]" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);">
             </div>
 
-            <!-- Preenche o espaço vazio superior (flex) -->
             <div class="flex-1"></div>
 
-            <!-- Textos no Rodapé do Card -->
             <div class="relative z-10 flex flex-col justify-end pt-10">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-newsreader text-stone-900 mb-4 leading-none">
                     <span class="text-xs md:text-sm font-sans font-bold tracking-[0.2em] uppercase text-[#C27A5B] block mb-3">Opa, bem-vinda(o)!</span>
@@ -105,8 +101,8 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full flex-1">
                 
-                <!-- Botão 1: Ir Para o Site (Full Spanning Banner) -->
-                <button id="btnEntrarSite" class="group col-span-1 sm:col-span-2 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-xl text-left border border-stone-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full focus:outline-none focus:ring-4 focus:ring-[#8B5E41]/20 flex flex-col">
+                <!-- Botão 1: Ir Para o Site (intercept-load incorporado na classe <a>) -->
+                <a href="index.html" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-xl text-left border border-stone-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full focus:outline-none focus:ring-4 focus:ring-[#8B5E41]/20 flex flex-col">
                     <div class="absolute inset-0 bg-stone-900 z-0"></div>
                     <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-20 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700">
                     <div class="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/80 to-transparent"></div>
@@ -126,10 +122,10 @@
                             </span>
                         </div>
                     </div>
-                </button>
+                </a>
 
-                <!-- Botão 2: O Livro (1 Coluna) -->
-                <a href="index.html#livro" class="group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-white/50 text-left hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <!-- Botão 2: O Livro (intercept-load) -->
+                <a href="index.html#livro" class="intercept-load group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-white/50 text-left hover:-translate-y-2 transition-transform duration-500 flex flex-col">
                     <div class="absolute inset-0 bg-[#C27A5B] z-0"></div>
                     <div class="absolute top-0 right-0 w-48 h-48 bg-white/20 rounded-full blur-[60px]"></div>
                     <div class="absolute bottom-0 right-0 w-[120%] h-[60%] opacity-30 group-hover:opacity-50 transition-opacity bg-gradient-to-t from-stone-900 to-transparent"></div>
@@ -149,8 +145,8 @@
                     </div>
                 </a>
 
-                <!-- Botão 3: Meus Eventos (1 Coluna) -->
-                <a href="index.html#eventos" class="group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-stone-200 text-left bg-white hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <!-- Botão 3: Meus Eventos (intercept-load) -->
+                <a href="index.html#eventos" class="intercept-load group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-stone-200 text-left bg-white hover:-translate-y-2 transition-transform duration-500 flex flex-col">
                     <div class="absolute -right-16 -top-16 w-64 h-64 bg-stone-50 rounded-full"></div>
                     <div class="absolute bottom-[-10%] right-[-10%] aspect-square w-3/4 opacity-40 group-hover:opacity-100 mix-blend-multiply group-hover:scale-110 transition-all duration-700 border-l-[1rem] border-white/50 rounded-tl-full overflow-hidden">
                         <img src="Assets/Foto1.jpeg" class="w-full h-full object-cover">
@@ -170,8 +166,8 @@
                     </div>
                 </a>
 
-                <!-- Botão 4: WhatsApp (Full Spanning Banner) -->
-                <a href="#" class="group col-span-1 sm:col-span-2 relative min-h-[10rem] flex flex-col rounded-[2rem] overflow-hidden shadow-xl text-left hover:-translate-y-2 transition-transform duration-500 bg-[#8B5E41] border border-[#C27A5B]">
+                <!-- Botão 4: WhatsApp (intercept-load opcional, mas requerido na solicitação "todos") -->
+                <a href="https://wa.me/" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[10rem] flex flex-col rounded-[2rem] overflow-hidden shadow-xl text-left hover:-translate-y-2 transition-transform duration-500 bg-[#8B5E41] border border-[#C27A5B]">
                     <div class="absolute inset-0 opacity-20 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.4)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-bg-pan z-0"></div>
 
                     <div class="relative z-10 w-full h-full p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 m-auto">
@@ -195,22 +191,31 @@
 
     </main>
 
-    <!-- SCRIPT DA INTERAÇÃO DE CARREGAMENTO (2.5s Delay) -->
+    <!-- SCRIPT GERAL PARA INTERCEPTAÇÃO DE CARREGAMENTO -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const btnEntrarSite = document.getElementById('btnEntrarSite');
+            // Seleciona todos os botões com a nova classe 'intercept-load'
+            const actionBtns = document.querySelectorAll('.intercept-load');
             const loadingOverlay = document.getElementById('loadingOverlay');
 
-            if (btnEntrarSite && loadingOverlay) {
-                btnEntrarSite.addEventListener('click', (e) => {
-                    e.preventDefault(); 
-                    
-                    loadingOverlay.classList.add('fade-in-active');
-                    document.body.style.overflow = 'hidden';
+            if (actionBtns.length > 0 && loadingOverlay) {
+                // Adiciona o Event Listener em todos eles via laço forEach
+                actionBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault(); 
+                        
+                        // Captura dinamicamente o link exato no qual o usuário clicou (ex: index.html#livro)
+                        const targetUrl = btn.getAttribute('href') || 'index.html';
+                        
+                        // Aciona a Tela de Overlay
+                        loadingOverlay.classList.add('fade-in-active');
+                        document.body.style.overflow = 'hidden';
 
-                    setTimeout(() => {
-                        window.location.href = 'index.html'; 
-                    }, 2500);
+                        // Dispara a transição em 2500ms redirecionando para a rota dinâmica correspondente
+                        setTimeout(() => {
+                            window.location.href = targetUrl; 
+                        }, 2500);
+                    });
                 });
             }
         });
