@@ -1,707 +1,224 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Andiara Pereira - Restauração Espiritual</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andiara Pereira | Bem-vinda</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     
-    <!-- Scripts & Fonts (Referencias do Design System) -->
-    <script src="Assets/green-museum/assets/resource_3fa48481346f.js"></script>
-    <script src="Assets/green-museum/assets/iconify-icon_e19829e7f0e8.js"></script>
-    <script src="Assets/instagram-slides/assets/lucide_latest_2eebd0ebe8c2.js"></script>
-    <link href="Assets/coffee-co.webflow.io/assets/coffee-co_da8823da9214.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     
     <style>
-        /* Tipografia, Cores e Estrutura exata do design_system2.html */
-        body {
-            font-family: 'Instrument Sans', sans-serif;
-            background-color: #E6E3D6; /* Warm beige base */
-            color: #262624;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
         .font-newsreader { font-family: 'Newsreader', serif; }
-        .font-sans { font-family: 'Instrument Sans', sans-serif; }
+        .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
         
-        /* Animações de entrada e revelação */
-        @keyframes animationIn {
-            0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
-            100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
-        }
-        .animate-on-scroll { animation-play-state: paused !important; }
-        .animate-on-scroll.animate { animation-play-state: running !important; }
-        
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee { animation: marquee 20s linear infinite; }
-        
-        @keyframes clip-reveal {
-            0% { clip-path: inset(100% 0 0 0); }
-            100% { clip-path: inset(0 0 0 0); }
-        }
-        .animate-clip { animation: clip-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate; }
-
-        /* Background grids */
-        .bg-grid-pattern {
-            background-image: radial-gradient(circle at 1px 1px, rgba(38,38,36,0.1) 1px, transparent 0);
-            background-size: 24px 24px;
+        body { 
+            background-color: #EAE8DE; 
+            color: #312c29; 
         }
 
-        /* Efeito das bordas de clipping das fotos */
-        [style*="--border-gradient"]::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            padding: 1px;
-            border-radius: var(--border-radius-before, inherit);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            background: var(--border-gradient);
-            pointer-events: none;
+        @keyframes pulseText {
+            0% { opacity: 0.15; transform: scale(0.97); }
+            50% { opacity: 1; transform: scale(1.01); text-shadow: 0 0 15px rgba(139, 94, 65, 0.2); }
+            100% { opacity: 0.15; transform: scale(0.97); }
+        }
+        .animate-pulse-text {
+            animation: pulseText 1.5s ease-in-out infinite;
         }
 
-        /* Navbar caso necessário no topo */
-        .ds-nav {
-            position: fixed; top: 0; z-index: 100; left: 0; right: 0;
-            background-color: rgba(230, 227, 214, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(38, 38, 36, 0.1);
+        @keyframes fadeInOverlay {
+            from { opacity: 0; backdrop-filter: blur(0px); }
+            to { opacity: 1; backdrop-filter: blur(8px); }
+        }
+        .fade-in-active {
+            display: flex !important;
+            animation: fadeInOverlay 0.6s ease-out forwards;
+        }
+        
+        @keyframes bgPan {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .animate-bg-pan {
+            animation: bgPan 3s linear infinite;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-stone-800 selection:text-[#E6E3D6]">
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
 
-    <!-- NAVBAR SIMPLES SEMÂNTICA -->
-    <header class="ds-nav w-full px-6 md:px-12 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="font-newsreader text-2xl font-bold tracking-tight text-stone-900">Andiara Pereira</div>
+    <!-- OVERLAY DE LOADING OCULTO (Mais delicado) -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-[#EAE8DE]/95 z-[9999] hidden flex-col items-center justify-center" style="display: none;">
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[#C27A5B] rounded-full blur-[80px]"></div>
         </div>
-    </header>
+        
+        <!-- Texto menor, fonte leve, espaçamento largo e bem elegante -->
+        <h2 class="relative z-10 text-2xl md:text-3xl lg:text-4xl font-newsreader font-light tracking-[0.3em] uppercase text-stone-800 animate-pulse-text text-center px-4">
+            Andiara Pereira
+        </h2>
+        <div class="mt-4 w-12 h-px bg-[#8B5E41]/30"></div>
+    </div>
 
-    <main>
-        <!-- HERO SECTION: Estrutura da Primeira Dobra do Design System -->
-        <section id="hero" class="relative w-full min-h-[90vh] flex flex-col justify-center items-center pt-24 pb-16 overflow-hidden bg-[#E6E3D6]">
-            
-            <!-- Fundos Animados (Grid + Efeitos Glow Terrosos) -->
-            <div class="absolute inset-0 bg-grid-pattern opacity-40 z-0 pointer-events-none"></div>
-            
-            <!-- Brilhos Ambientais (Usando Accent #9EA08F e o Terracotta atualizado #C27A5B) -->
-            <div class="absolute -bottom-40 -left-64 w-[600px] h-[600px] bg-gradient-to-tr from-[#9EA08F] to-transparent rounded-full blur-[140px] opacity-40 mix-blend-multiply pointer-events-none"></div>
-            <div class="absolute top-10 right-0 w-96 h-96 bg-gradient-to-bl from-[#C27A5B] to-transparent rounded-full blur-[120px] opacity-20 pointer-events-none animate-pulse"></div>
+    <!-- Background Ornaments (Global) -->
+    <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#C27A5B]/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
 
-            <!-- Faixa Marquee de Elementos de Fundo (Coffee-co concept) -->
-            <div class="absolute top-32 left-0 w-full opacity-5 pointer-events-none overflow-hidden z-0 transform -rotate-2 select-none">
-                <div class="flex animate-marquee whitespace-nowrap">
-                    <h1 class="text-8xl font-newsreader font-bold text-stone-900 mx-4">Restauração</h1>
-                    <h1 class="text-8xl font-sans font-light text-stone-900 mx-4">Espiritual</h1>
-                    <h1 class="text-8xl font-newsreader font-bold text-stone-900 mx-4">Amor de Cristo</h1>
-                </div>
+    <main class="w-full max-w-[85rem] mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row gap-8 lg:gap-10 relative z-10 min-h-screen items-center lg:items-stretch">
+        
+        <!-- COLUNA ESQUERDA (Card Fixo/Unificado) -->
+        <div class="w-full lg:w-[40%] flex flex-col justify-between bg-[#F2EFE8] border border-white/60 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3rem] shadow-xl relative overflow-hidden group">
+            
+            <div class="absolute inset-x-0 top-0 h-[60%] lg:h-[65%] overflow-hidden pointer-events-none">
+                <div class="absolute inset-0 opacity-80" style="background: radial-gradient(circle at center, rgba(194,122,91,0.2) 0%, transparent 70%);"></div>
+                <img src="Assets/Foto2.jpeg" alt="Andiara Pereira Fundo" class="w-full h-full object-cover object-top mask-image-gradient group-hover:scale-105 transition-transform duration-[1.5s]" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);">
             </div>
 
-            <!-- Container Principal (Usando w-1/2 no LG para forçar rigorosamente 50/50 ao invés de flex-1 que é flexível demais) -->
-            <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 h-full mt-10">
+            <div class="flex-1"></div>
+
+            <div class="relative z-10 flex flex-col justify-end pt-10">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-newsreader text-stone-900 mb-4 leading-none">
+                    <span class="text-xs md:text-sm font-sans font-bold tracking-[0.2em] uppercase text-[#C27A5B] block mb-3">Opa, bem-vinda(o)!</span>
+                    Andiara Pereira
+                </h1>
                 
-                <!-- COLUNA ESQUERDA: Textos e CTAs -->
-                <div class="w-full lg:w-1/2 shrink-0 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll max-w-2xl">
+                <p class="text-base lg:text-lg text-stone-600 font-sans leading-relaxed max-w-sm">
+                    Se você busca viver uma verdadeira experiência de <b class="text-[#8B5E41] font-semibold">Cura e Restauração</b> para sua identidade no amor de Cristo, basta clicar nos botões ao lado.
+                </p>
+            </div>
+            
+        </div>
+
+        <!-- COLUNA DIREITA (Bento Grid dos 4 Botões) -->
+        <div class="w-full lg:w-[60%] flex flex-col justify-between">
+            
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-2xl lg:text-3xl font-newsreader font-medium text-stone-900">Acesso Rápido</h2>
+                <div class="h-px bg-stone-300/60 flex-1 ml-4 lg:hidden"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full flex-1">
+                
+                <!-- Botão 1: Ir Para o Site (intercept-load incorporado na classe <a>) -->
+                <a href="home.html" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-xl text-left border border-stone-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full focus:outline-none focus:ring-4 focus:ring-[#8B5E41]/20 flex flex-col">
+                    <div class="absolute inset-0 bg-stone-900 z-0"></div>
+                    <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-20 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/80 to-transparent"></div>
                     
-                    <!-- Badge Indicativo (Tornando o design mais vivo) -->
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C27A5B]/20 bg-stone-100/30 backdrop-blur-md mb-8 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-[#C27A5B] animate-pulse"></span>
-                        <span class="text-sm font-sans font-medium text-stone-700 tracking-wide uppercase">Jornada de Superação</span>
-                    </div>
-                    
-                    <!-- Headline H1 com Newsreader e estilo display -->
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-newsreader font-medium text-stone-900 mb-6 leading-[1.1]">
-                        Encontre cura para as feridas da alma e redescubra sua 
-                        <span class="block text-stone-600 font-sans text-3xl md:text-4xl lg:text-5xl font-light mt-2 italic">verdadeira identidade em Cristo.</span>
-                    </h1>
-                    
-                    <!-- Sub-headline Parágrafo (Body L/Sans com barra lateral verde sage) -->
-                    <p class="text-lg md:text-xl text-stone-600 font-sans max-w-lg mb-10 leading-relaxed border-l-2 border-[#9EA08F] pl-4">
-                        Andiara Pereira usa seu testemunho de superação para guiar mulheres e adolescentes em uma jornada de restauração espiritual e amor incondicional.
-                    </p>
-                    
-                    <!-- Container de CTAs Mobile-First (Empilha no Mobile, Lado-a-Lado no Desktop) -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <div class="relative z-10 p-8 h-full flex flex-col justify-center">
+                        <div class="inline-flex items-center gap-2 bg-[#EAE8DE]/10 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full text-xs font-bold text-[#EAE8DE] tracking-wider w-max mb-4">
+                            <iconify-icon icon="solar:home-smile-angle-linear" width="16"></iconify-icon> SITE OFICIAL
+                        </div>
                         
-                        <!-- BOTÃO 1: Estilo Primário de Destaque (Border Beam Animado do Sistema) -->
-                        <a href="#livro" class="group relative px-8 py-4 bg-stone-900 text-[#E6E3D6] rounded-full text-sm font-sans font-medium flex items-center justify-center gap-3 overflow-hidden shadow-xl shadow-stone-900/10 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
-                            <!-- Borda animada conic gradient (rodando no hover e sempre rodando nas laterais) -->
-                            <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#E6E3D6_100%)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                            <!-- Cobertura da borda interna, mudando estado no hover -->
-                            <span class="absolute inset-[1px] bg-stone-800 rounded-full z-0 group-hover:bg-stone-900 transition-colors"></span>
-                            
-                            <span class="relative z-10 flex items-center gap-2"> 
-                                Quero Conhecer o Livro 
-                                <iconify-icon icon="solar:book-bookmark-linear" width="20" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        <h3 class="text-3xl md:text-4xl font-newsreader font-medium text-white mb-2 group-hover:text-[#C27A5B] transition-colors leading-tight">Ir para o Site</h3>
+                        <p class="text-stone-300 font-sans text-sm max-w-xs leading-relaxed hidden sm:block">Explore toda a minha trajetória e projetos completos em nossa plataforma.</p>
+                        
+                        <div class="mt-4 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#E6E3D6] group-hover:text-white transition-colors">
+                            CONHECER AGORA
+                            <span class="w-8 h-8 rounded-full bg-[#8B5E41] flex items-center justify-center group-hover:translate-x-2 transition-transform">
+                                <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
                             </span>
-                        </a>
-
-                        <!-- BOTÃO 2: Estilo Secundário / Esboçado -->
-                        <a href="#agenda" class="px-8 py-4 bg-transparent border border-stone-800/20 text-stone-900 rounded-full text-sm font-sans font-medium flex items-center justify-center gap-3 hover:bg-stone-900 hover:text-white transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
-                            <iconify-icon icon="solar:calendar-date-linear" width="20"></iconify-icon>
-                            Veja a Agenda
-                        </a>
-                    </div>
-                </div>
-
-                <!-- COLUNA DIREITA: Visual / Imagem (Baseado no Card Instagram-Sides) -->
-                <div class="w-full lg:w-[45%] lg:ml-auto relative flex items-center justify-center lg:justify-end mt-12 lg:mt-0 [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
-                    <!-- Detalhe flutuante (ícone estrela decorativa) -->
-                    <iconify-icon icon="solar:star-fall-linear" width="48" class="absolute top-0 right-10 text-stone-400/50 animate-pulse hidden md:block"></iconify-icon>
-                    
-                    <!-- Card Visual Principal com borda gradiente -->
-                    <div class="relative w-full max-w-md aspect-[3/4] group shadow-2xl rounded-t-[10rem] rounded-b-[2rem] overflow-hidden" style="--border-gradient: linear-gradient(180deg, rgba(38,38,36,0.3), rgba(38,38,36,0)); --border-radius-before: 2rem;">
-                        <!-- Placeholder Imagem Andiara -->
-                        <!-- Usando a imagem local do design system como placeholder de alta qualidade -->
-                        <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" alt="Andiara Pereira"/>
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent"></div>
-                        
-                        <!-- Clip Reveal tracking back to the Instagram Slides style -->
-                        <div class="absolute inset-0 opacity-0 group-hover:opacity-30 mix-blend-overlay bg-stone-400 animate-clip transition-opacity duration-500"></div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SEÇÃO: QUEM É ANDIARA (Sobre) -->
-        <section id="quem-e" class="w-full bg-[#EAE8DE] py-24 px-6 md:px-12 relative overflow-hidden">
-            <!-- Grid Pattern background -->
-            <div class="absolute inset-0 bg-grid-pattern opacity-20 mt-10"></div>
-            
-            <div class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-                
-                <!-- Imagem / Visual (Esquerda desktop, topo mobile) -->
-                <div class="w-full lg:w-[45%] flex justify-center lg:justify-start mt-12 md:mt-0 relative">
-                    <!-- Efeito Blur Escondido para glow -->
-                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-[#C27A5B] rounded-full blur-[100px] opacity-20 pointer-events-none animate-pulse"></div>
-                    
-                    <!-- Container da Imagem com as sombras, bordas e proporções do sistema -->
-                    <div class="relative w-full max-w-sm lg:max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
-                        <!-- Imagem Placeholder (Reutilizando Foto1 para consistency visual) -->
-                        <img src="Assets/Foto2.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Andiara Pereira Biografia"/>
-                        
-                        <!-- Sobreposição Elegante -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#1c1917]/90 via-[#1c1917]/20 to-transparent"></div>
-                        
-                        <!-- Detalhe da tipografia do design system intrínseca à foto -->
-                        <div class="absolute bottom-6 left-6 transition-transform duration-500 group-hover:-translate-y-2 text-[#E6E3D6]">
-                            <h3 class="text-2xl md:text-3xl font-newsreader font-light">Andiara Pereira</h3>
-                            <p class="text-xs md:text-sm font-sans tracking-widest uppercase text-[#9EA08F] mt-1">Autora & Palestrante</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Textos e Tipos (Direita desktop, base mobile) -->
-                <div class="flex-1 w-full [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
+                </a>
 
+                <!-- Botão 2: O Livro (intercept-load) -->
+                <a href="home.html#livro" class="intercept-load group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-white/50 text-left hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                    <div class="absolute inset-0 bg-[#C27A5B] z-0"></div>
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-white/20 rounded-full blur-[60px]"></div>
+                    <div class="absolute bottom-0 right-0 w-[120%] h-[60%] opacity-30 group-hover:opacity-50 transition-opacity bg-gradient-to-t from-stone-900 to-transparent"></div>
+                    <img src="Assets/Foto2.jpeg" class="absolute bottom-0 right-[-10%] w-[80%] h-auto object-cover opacity-20 sepia group-hover:scale-110 transition-transform duration-700 pointer-events-none">
                     
-                    <div class="space-y-6 text-lg text-stone-600 font-sans leading-relaxed">
-                        <p>
-                            A trajetória de Andiara Pereira é marcada por uma fé inabalável que transformou dores profundas em um propósito de vida. Ela conhece de perto o peso de um divórcio e o luto avassalador de oito perdas gestacionais.
-                        </p>
-                        <!-- Quote Box: Redesenhado levemente com bloco para não expandir as barras laterais desnecessárias -->
-                        <blockquote class="border-l-4 border-[#9EA08F] pl-6 py-4 italic text-stone-700 bg-white/50 rounded-r-2xl shadow-sm my-8">
-                            Mas, foi exatamente no meio dessa dor, quando tudo parecia perdido, que ela encontrou a verdadeira cura, restauração e o amor incondicional de Jesus.
-                        </blockquote>
-                        <p>
-                            Hoje, Andiara é autora, palestrante e criadora de conteúdo cristã, dedicando sua vida a ser uma voz de esperança. Usando seu próprio testemunho, ela mostra a mulheres e adolescentes que as feridas do passado não têm poder para definir quem elas são. Você não é a sua dor. Você é quem Deus diz que você é.
-                        </p>
+                    <div class="relative z-10 w-full h-full p-8 flex flex-col justify-between">
+                        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30 text-white mb-4">
+                            <iconify-icon icon="solar:book-bookmark-minimalistic-line-duotone" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/80 font-sans font-bold mb-1">A Obra</p>
+                            <h3 class="text-2xl font-newsreader font-medium text-white mb-4 leading-tight tracking-wide">O Livro<br>Filha Amada</h3>
+                            <span class="inline-flex items-center justify-center bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest rounded-full px-5 py-2.5 hover:bg-stone-800 transition-colors w-full sm:w-max text-center">
+                                Saber Mais
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Botão 3: Meus Eventos (intercept-load) -->
+                <a href="home.html#eventos" class="intercept-load group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-stone-200 text-left bg-white hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                    <div class="absolute -right-16 -top-16 w-64 h-64 bg-stone-50 rounded-full"></div>
+                    <div class="absolute bottom-[-10%] right-[-10%] aspect-square w-3/4 opacity-40 group-hover:opacity-100 mix-blend-multiply group-hover:scale-110 transition-all duration-700 border-l-[1rem] border-white/50 rounded-tl-full overflow-hidden">
+                        <img src="Assets/Foto1.jpeg" class="w-full h-full object-cover">
                     </div>
                     
-                    <!-- Decoração Extra para Autoridade / Confiança (Ícone + Frase de Missão) -->
-                    <div class="mt-12 flex items-center gap-6 pt-8 border-t border-stone-300/50 max-w-lg">
+                    <div class="relative z-10 w-full h-full p-8 flex flex-col justify-between pointer-events-none">
+                        <div class="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center text-[#8B5E41] pointer-events-auto shadow-inner border border-stone-50 mb-4">
+                            <iconify-icon icon="solar:calendar-date-bold-duotone" width="24"></iconify-icon>
+                        </div>
+                        <div class="pointer-events-auto">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-sans font-bold mb-1">Imersão Presencial</p>
+                            <h3 class="text-2xl font-newsreader font-medium text-stone-800 mb-4 leading-tight tracking-wide">Meus<br>Eventos</h3>
+                            <span class="inline-flex items-center justify-center bg-[#EAE8DE] text-stone-700 text-[10px] font-bold uppercase tracking-widest rounded-full px-5 py-2.5 group-hover:bg-[#8B5E41] group-hover:text-white transition-colors border border-stone-200 w-full sm:w-max text-center">
+                                Ver Datas
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Botão 4: WhatsApp (intercept-load opcional, mas requerido na solicitação "todos") -->
+                <a href="https://wa.me/" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[10rem] flex flex-col rounded-[2rem] overflow-hidden shadow-xl text-left hover:-translate-y-2 transition-transform duration-500 bg-[#8B5E41] border border-[#C27A5B]">
+                    <div class="absolute inset-0 opacity-20 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.4)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-bg-pan z-0"></div>
+
+                    <div class="relative z-10 w-full h-full p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 m-auto">
                         <div class="flex-1">
-                            <p class="text-xs uppercase tracking-widest text-[#C27A5B] font-bold mb-1">Missão</p>
-                            <p class="font-newsreader text-2xl text-stone-800">Restaurando Vidas pelo Amor</p>
+                            <div class="inline-flex items-center gap-2 bg-stone-900/20 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white tracking-widest uppercase mb-3 border border-white/20">
+                                Dúvidas & Suporte
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-newsreader font-medium text-white mb-2 tracking-wide">Fale Comigo no WhatsApp</h3>
+                            <p class="text-white/80 font-sans text-xs md:text-sm">Nossa equipe está preparada para te atender e caminhar lado a lado.</p>
                         </div>
-                        <iconify-icon icon="solar:leaf-bold-duotone" width="48" class="text-[#9EA08F] opacity-50"></iconify-icon>
+                        <div class="shrink-0 self-end sm:self-center">
+                            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:-rotate-12 transition-transform border border-stone-100">
+                                <iconify-icon icon="mdi:whatsapp" width="40" class="text-[#8B5E41]"></iconify-icon>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
 
             </div>
-        </section>
-
-        <!-- SEÇÃO: O LIVRO 'FILHA AMADA' -->
-        <section id="livro" class="w-full bg-[#E6E3D6] py-24 px-6 md:px-12 relative overflow-hidden">
-            <!-- Background glow suave do sistema para dar o tom da carta de amor -->
-            <div class="absolute inset-0 z-0 pointer-events-none">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#9EA08F] to-transparent rounded-full blur-[150px] opacity-20"></div>
-                <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#C27A5B] to-transparent rounded-full blur-[120px] opacity-10"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-                
-
-
-                <!-- Grid principal envolvente (Textos rodeando o Livro no centro) -->
-                <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center lg:items-stretch">
-                    
-                    <!-- Coluna Esquerda LG (Problema e Convite) -->
-                    <div class="lg:col-span-4 flex flex-col justify-center gap-6 lg:text-right order-2 lg:order-1 items-start lg:items-end w-full lg:pr-6 lg:border-r-2 border-[#C27A5B]/20">
-                        <p class="text-lg md:text-xl text-stone-600 font-sans leading-relaxed">
-                            Você carrega dores que parecem insuportáveis? Sentimentos de rejeição, medo ou orfandade espiritual têm paralisado a sua vida?
-                        </p>
-                        <p class="text-lg text-stone-600 font-sans leading-relaxed">
-                            O livro <strong class="text-stone-800">'Filha Amada'</strong> foi escrito pensando em você. Este livro não é apenas uma leitura, é um convite divino para uma mudança profunda na forma como você se vê e se relaciona com o Pai.
-                        </p>
-                        <div class="w-full h-px bg-stone-300/60 my-2 block lg:hidden"></div>
-                        <p class="text-base font-sans font-medium text-[#C27A5B] tracking-wide mt-2">
-                            Em suas páginas, Andiara guia você por um caminho de descobertas:
-                        </p>
-                    </div>
-
-                    <!-- Coluna Central LG (O Livro - Destaque Visual) -->
-                    <div class="lg:col-span-4 flex justify-center items-center order-1 lg:order-2 w-full relative z-20 pt-8 lg:pt-0 pb-12 lg:pb-0">
-                        <!-- Glow forte focado no livro estilo design_system -->
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 lg:w-96 lg:h-96 bg-[#C27A5B] rounded-full blur-[90px] opacity-20 pointer-events-none"></div>
-                        
-                        <!-- Livro Placeholder (Simulação de um formato impresso luxuoso) -->
-                        <div class="group relative w-64 md:w-72 lg:w-80 aspect-[2.8/4] rounded-r-3xl rounded-l-md shadow-2xl border border-stone-300/50 bg-[#E6E3D6] overflow-hidden transition-all duration-700 hover:scale-105 hover:-translate-y-4 hover:rotate-3 flex flex-col items-center justify-center p-8 text-center" style="--border-gradient: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0));">
-                            
-                            <!-- Imagem Temporária do Livro usando Foto Placeholder mesclada escurecida para fundo-->
-                            <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply grayscale" alt="Livro Filha Amada Base"/>
-                            <div class="absolute inset-0 bg-gradient-to-b from-[#312c29]/90 via-[#453831]/80 to-[#2c221e]/95"></div>
-
-                            <!-- Mockup Conteúdo da Capa -->
-                            <div class="relative z-10 w-full h-full border-2 border-[#C27A5B]/40 rounded-sm p-6 flex flex-col justify-between items-center bg-transparent">
-                                <p class="text-[#E6E3D6] text-[10px] font-sans tracking-[0.3em] uppercase opacity-70 mt-2">Andiara Pereira</p>
-                                
-                                <div class="w-full flex justify-center my-auto relative">
-                                    <iconify-icon icon="solar:crown-minimalistic-bold-duotone" width="36" class="absolute -top-12 text-[#C27A5B] opacity-90"></iconify-icon>
-                                    <h3 class="text-[#E6E3D6] font-newsreader text-5xl font-light italic leading-tight text-center drop-shadow-md">Filha<br>Amada</h3>
-                                </div>
-
-                                <div class="w-8 h-[1px] bg-[#C27A5B]/60 mb-2"></div>
-                            </div>
-                            
-                            <!-- Lombada/Dobra Shadow (Efeito Livro 3D) -->
-                            <div class="absolute top-0 bottom-0 left-0 w-6 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
-                            
-                            <!-- Efeito Highlight Vidro (Animação originada do Hover System) -->
-                            <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 w-[200%] h-full transform -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-[1.5s] ease-out z-20 pointer-events-none"></div>
-                        </div>
-                    </div>
-
-                    <!-- Coluna Direita LG (Benefícios, Hook e Botão) -->
-                    <div class="lg:col-span-4 flex flex-col justify-center gap-10 order-3 lg:order-3 items-start w-full lg:pl-6">
-                        
-                        <!-- Lista de Tópicos (Features com ícones minimalistas de cura e amor) -->
-                        <ul class="space-y-6 lg:space-y-8 w-full border-t-2 border-[#C27A5B]/20 lg:border-none pt-8 lg:pt-0">
-                            <!-- Feature 1 -->
-                            <li class="flex items-start gap-5 group/item">
-                                <div class="w-12 h-12 shrink-0 rounded-full bg-white/60 backdrop-blur-sm shadow-sm flex items-center justify-center border border-stone-200 group-hover/item:border-[#C27A5B] group-hover/item:bg-white group-hover/item:scale-110 group-hover/item:-translate-y-1 transition-all duration-300">
-                                    <iconify-icon icon="solar:star-fall-bold-duotone" width="24" class="text-[#9EA08F] group-hover/item:text-[#C27A5B] transition-colors"></iconify-icon>
-                                </div>
-                                <div>
-                                    <h4 class="font-sans font-bold text-stone-900 mb-1 lg:text-lg">Restauração da Identidade</h4>
-                                    <p class="font-sans text-sm md:text-base text-stone-600 leading-relaxed">Entenda, de uma vez por todas, o que significa ser escolhida e amada por Deus.</p>
-                                </div>
-                            </li>
-                            <!-- Feature 2 -->
-                            <li class="flex items-start gap-5 group/item">
-                                <div class="w-12 h-12 shrink-0 rounded-full bg-white/60 backdrop-blur-sm shadow-sm flex items-center justify-center border border-stone-200 group-hover/item:border-[#C27A5B] group-hover/item:bg-white group-hover/item:scale-110 group-hover/item:-translate-y-1 transition-all duration-300">
-                                    <iconify-icon icon="solar:hand-heart-bold-duotone" width="24" class="text-[#9EA08F] group-hover/item:text-[#C27A5B] transition-colors"></iconify-icon>
-                                </div>
-                                <div>
-                                    <h4 class="font-sans font-bold text-stone-900 mb-1 lg:text-lg">Cura Emocional</h4>
-                                    <p class="font-sans text-sm md:text-base text-stone-600 leading-relaxed">Aprenda a entregar suas dores mais profundas a Quem realmente pode curá-las.</p>
-                                </div>
-                            </li>
-                            <!-- Feature 3 -->
-                            <li class="flex items-start gap-5 group/item">
-                                <div class="w-12 h-12 shrink-0 rounded-full bg-white/60 backdrop-blur-sm shadow-sm flex items-center justify-center border border-stone-200 group-hover/item:border-[#C27A5B] group-hover/item:bg-white group-hover/item:scale-110 group-hover/item:-translate-y-1 transition-all duration-300">
-                                    <iconify-icon icon="solar:eye-scan-bold-duotone" width="24" class="text-[#9EA08F] group-hover/item:text-[#C27A5B] transition-colors"></iconify-icon>
-                                </div>
-                                <div>
-                                    <h4 class="font-sans font-bold text-stone-900 mb-1 lg:text-lg">Mudança de Perspectiva</h4>
-                                    <p class="font-sans text-sm md:text-base text-stone-600 leading-relaxed">Comece a viver com a confiança e a liberdade que só uma verdadeira Filha Amada possui.</p>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-
-                <!-- Bloco Fechamento (Hook Escrito + CTA Primário) Centralizado abaixo da seção -->
-                <div class="w-full max-w-2xl mx-auto bg-stone-100/50 p-6 md:p-8 md:py-10 rounded-3xl border border-white relative overflow-hidden flex flex-col gap-8 shadow-sm mt-16 lg:mt-24">
-                    <!-- Background Decorativo Subtil da caixa -->
-                    <div class="absolute -bottom-16 -right-16 w-64 h-64 bg-[#C27A5B]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                    <p class="text-2xl md:text-3xl font-newsreader font-medium text-stone-900 italic text-center text-balance leading-snug">
-                        Descubra que você é amada. <br class="hidden sm:block">Descubra que você pertence.
-                    </p>
-
-                    <!-- BOTÃO PRINCIPAL -->
-                    <button class="group relative w-full sm:w-auto self-center px-10 py-5 bg-stone-900 text-[#E6E3D6] rounded-full text-[15px] sm:text-base font-sans font-medium flex items-center justify-center gap-3 overflow-hidden shadow-xl shadow-stone-900/20 hover:-translate-y-1 transition-all duration-300">
-                        <!-- Borda animada conic gradient (Hover Beam Effect) -->
-                        <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#E6E3D6_100%)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                        <!-- Cobertura da borda interna -->
-                        <span class="absolute inset-[1px] bg-stone-800 rounded-full z-0 group-hover:bg-stone-900 transition-colors"></span>
-                        
-                        <span class="relative z-10 flex items-center gap-2"> 
-                            Quero Ler "Filha Amada" 
-                            <iconify-icon icon="solar:book-bookmark-linear" width="22" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></iconify-icon>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- QUARTA DOBRA: Palestras e Eventos (A Experiência Ao Vivo) -->
-        <section id="eventos" class="relative w-full bg-[#312c29] py-24 lg:py-32 overflow-hidden">
-            <!-- Efeitos de Fundo (Glow suave) -->
-            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#C27A5B] rounded-full blur-[120px] opacity-15"></div>
-                <div class="absolute bottom-10 -left-20 w-80 h-80 bg-[#453831] rounded-full blur-[100px] opacity-40"></div>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col gap-20">
-                
-                <!-- Cabeçalho da Seção -->
-                <div class="w-full max-w-3xl mx-auto text-center [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll flex flex-col items-center">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm shadow-sm">
-                        <iconify-icon icon="solar:ticket-sale-bold-duotone" width="18" class="text-[#C27A5B]"></iconify-icon>
-                        <span class="text-xs font-sans font-semibold tracking-widest text-[#E6E3D6] uppercase">A Experiência Ao Vivo</span>
-                    </div>
-                    
-                    <p class="text-lg md:text-xl text-stone-400 font-sans leading-relaxed text-balance">
-                        Andiara promove encontros presenciais criados para ser um refúgio de acolhimento e um ponto de virada na reconstrução da identidade feminina. São momentos poderosos de comunhão, reflexão e cura.
-                    </p>
-                </div>
-
-                <!-- Cards dos Encontros (Grid 2 colunas com staggered Layout leve) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll relative">
-                    
-                    <!-- Cards removidos o elemento de linha tracejada decorativa -->
-
-                    <!-- Card 1: Adolescentes -->
-                    <div class="group relative bg-[#453831]/20 backdrop-blur-md border border-white/5 p-8 md:p-12 rounded-3xl overflow-hidden hover:bg-[#453831]/40 transition-colors duration-500 flex flex-col justify-start z-10">
-                        <!-- Ornamento de Fundo Hover -->
-                        <div class="absolute -top-16 -right-16 w-32 h-32 bg-[#C27A5B] rounded-full blur-[50px] opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none"></div>
-                        
-                        <div class="w-16 h-16 rounded-2xl bg-[#312c29]/80 border border-white/10 flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 group-hover:border-[#C27A5B]/30">
-                            <iconify-icon icon="solar:heart-pulse-bold-duotone" width="32" class="text-[#C27A5B]"></iconify-icon>
-                        </div>
-                        
-                        <h3 class="text-2xl lg:text-3xl font-newsreader text-[#EAE8DE] font-medium mb-5 group-hover:text-white transition-colors">
-                            1º Encontro de Adolescentes <span class="block text-xl md:text-2xl text-[#C27A5B] mt-2 font-sans italic tracking-wide">Filha Amada</span>
-                        </h3>
-                        
-                        <p class="text-stone-400 font-sans leading-relaxed text-base md:text-lg flex-1 group-hover:text-stone-300 transition-colors">
-                            Focado nas descobertas e inseguranças da adolescência. Uma tarde para ensinar às meninas que sua verdadeira identidade não está nas redes sociais ou na opinião dos outros, mas no amor inabalável de Deus. Um momento para curar feridas do coração antes que elas se tornem cicatrizes profundas.
-                        </p>
-                    </div>
-
-                    <!-- Card 2: Mulheres -->
-                    <div class="group relative bg-[#453831]/20 backdrop-blur-md border border-white/5 p-8 md:p-12 rounded-3xl overflow-hidden hover:bg-[#453831]/40 transition-colors duration-500 flex flex-col justify-start mt-4 lg:mt-16 z-10">
-                        <!-- Ornamento de Fundo Hover -->
-                        <div class="absolute -bottom-16 -left-16 w-32 h-32 bg-[#9EA08F] rounded-full blur-[50px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"></div>
-                        
-                        <div class="w-16 h-16 rounded-2xl bg-[#312c29]/80 border border-white/10 flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 group-hover:border-[#C27A5B]/30">
-                            <iconify-icon icon="solar:crown-star-bold-duotone" width="32" class="text-[#C27A5B]"></iconify-icon>
-                        </div>
-                        
-                        <h3 class="text-2xl lg:text-3xl font-newsreader text-[#EAE8DE] font-medium mb-5 group-hover:text-white transition-colors">
-                            2º Encontro de Mulheres <span class="block text-xl md:text-2xl text-[#C27A5B] mt-2 font-sans italic tracking-wide">Filha Amada</span>
-                        </h3>
-                        
-                        <p class="text-stone-400 font-sans leading-relaxed text-base md:text-lg flex-1 group-hover:text-stone-300 transition-colors">
-                            Uma experiência voltada para mulheres que carregam dores silenciosas. Sob o tema "Identidade, Valor e Pertencimento", este encontro presencial é um espaço de acolhimento e cura, criado para que você se reconecte com sua essência e lembre-se: você é chamada para viver como uma filha amada, restaurada e livre em Cristo.
-                        </p>
-                    </div>
-
-                </div>
-
-                <!-- Galeria de Experiência Visual (Grid Automático - Disposição Mosaico Restaurada) -->
-                <div class="w-full [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
-                    
-                    <div class="flex items-center justify-between mb-10">
-                        <h4 class="text-xs md:text-sm font-sans font-semibold text-[#EAE8DE] uppercase tracking-[0.2em]">Registros dos Encontros</h4>
-                        <div class="h-px bg-white/10 flex-1 ml-6 lg:ml-10"></div>
-                    </div>
-
-                    <!-- CSS Grid Mosaico Dinâmico 4x2 na LG, 2x... na SM -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 auto-rows-[180px] md:auto-rows-[240px]">
-                        
-                        <!-- Imagem 1 (Larga) -->
-                        <div class="col-span-2 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-stone-900/40 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto2.jpeg" alt="Auditório Cheio - Andiara" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] mix-blend-luminosity hover:mix-blend-normal blur-[1px] group-hover:blur-none"/>
-                        </div>
-                        
-                        <!-- Imagem 2 (Normal) -->
-                        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-[#C27A5B]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto1.jpeg" alt="Momento de Oração - Andiara" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
-                        </div>
-
-                        <!-- Imagem 3 (Alta - Ocupa 2 linhas em telas maiores) -->
-                        <div class="col-span-1 row-span-2 hidden md:block rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-stone-900/60 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto2.jpeg" alt="Abraço - Encontro Filha Amada" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] opacity-80 hover:opacity-100 object-top"/>
-                        </div>
-
-                        <!-- Imagem 4 (Normal) -->
-                        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-[#453831]/40 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto1.jpeg" alt="Mulheres Sorrindo" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
-                        </div>
-
-                        <!-- Imagem 5 (Larga) -->
-                        <div class="col-span-2 md:col-span-2 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-stone-900/50 group-hover:bg-stone-900/10 transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto2.jpeg" alt="Andiara no Palco" class="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] opacity-90 hover:opacity-100 object-center"/>
-                        </div>
-
-                        <!-- Imagem 6 (Normal - Mobile apenas) -->
-                        <div class="col-span-1 row-span-1 md:hidden rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-[#C27A5B]/30 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto1.jpeg" alt="Emoção" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- QUINTA DOBRA: Agenda Aberta (Onde Encontrá-la) -->
-        <section id="agenda" class="w-full bg-[#EAE8DE] py-24 px-6 md:px-12 relative overflow-hidden">
-            <!-- Background Decorations -->
-            <div class="absolute inset-0 z-0 pointer-events-none opacity-30 mt-10">
-                <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#C27A5B]/30 to-transparent rounded-full blur-[120px]"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto relative z-10 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-                
-                <div class="w-full text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-100 border border-stone-200 mb-6 shadow-sm">
-                        <iconify-icon icon="solar:calendar-mark-bold-duotone" width="18" class="text-[#8B5E41]"></iconify-icon>
-                        <span class="text-xs font-sans font-semibold tracking-widest text-stone-600 uppercase">Agenda Oficial</span>
-                    </div>
-                    
-                    <p class="text-lg md:text-xl text-stone-600 font-sans leading-relaxed">Participe de uma experiência transformadora. Veja onde Andiara estará em breve.</p>
-                </div>
-
-                <!-- CONTROLE DE ESTADO DA AGENDA -->
-                <!-- INSTRUÇÕES PARA DESENVOLVEDORES:
-                     Para alternar o estado visível da agenda:
-                     1. Para exibir a AGENDA ATIVA: Remova a classe 'hidden' da div com id="cenario-agenda-ativa" e adicione 'hidden' em "cenario-agenda-vazia"
-                     2. Para exibir AGENDA VAZIA (Captura): Faça o oposto (adicione 'hidden' na ativa, remova 'hidden' da vazia).
-                -->
-
-                <!-- CENÁRIO 1: AGENDA ATIVA (Visível por padrão) -->
-                <div id="cenario-agenda-ativa" class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-                    
-                    <!-- Lado Esquerdo: Calendário Visual -->
-                    <div class="w-full lg:w-[40%] bg-white p-6 lg:p-8 rounded-3xl shadow-sm border border-stone-200">
-                        <!-- Header Calendar -->
-                        <div class="flex items-center justify-between mb-8">
-                            <h3 class="font-sans font-bold text-stone-800 text-lg">Novembro 2024</h3>
-                            <div class="flex gap-2">
-                                <button class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center hover:bg-stone-200 hover:text-stone-800 text-stone-500 transition-colors"><iconify-icon icon="solar:alt-arrow-left-line-duotone"></iconify-icon></button>
-                                <button class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center hover:bg-stone-200 hover:text-stone-800 text-stone-500 transition-colors"><iconify-icon icon="solar:alt-arrow-right-line-duotone"></iconify-icon></button>
-                            </div>
-                        </div>
-                        <!-- Dias da semana -->
-                        <div class="grid grid-cols-7 gap-2 mb-4 text-center text-xs font-sans font-bold text-stone-400">
-                            <div>D</div><div>S</div><div>T</div><div>Q</div><div>Q</div><div>S</div><div>S</div>
-                        </div>
-                        <!-- Dias do mês -->
-                        <div class="grid grid-cols-7 gap-2 text-center text-sm md:text-base font-sans text-stone-700 font-medium">
-                            <div class="text-stone-300 py-2">29</div><div class="text-stone-300 py-2">30</div><div class="text-stone-300 py-2">31</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">1</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">2</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">3</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">4</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">5</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">6</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">7</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">8</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">9</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">10</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">11</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">12</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">13</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">14</div>
-                            <!-- Data Destaque (Evento 1) -->
-                            <div class="py-2 bg-[#8B5E41] text-white rounded-lg font-bold shadow-md shadow-[#8B5E41]/30 cursor-pointer hover:scale-105 hover:-translate-y-1 transition-transform border border-[#8B5E41] relative group">
-                                15
-                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-max px-3 py-1 bg-stone-900 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-stone-900">Conferência</div>
-                            </div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">16</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">17</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">18</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">19</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">20</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">21</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">22</div>
-                            <!-- Data Destaque (Evento 2) -->
-                            <div class="py-2 bg-[#8B5E41] text-white rounded-lg font-bold shadow-md shadow-[#8B5E41]/30 cursor-pointer hover:scale-105 hover:-translate-y-1 transition-transform border border-[#8B5E41] relative group">
-                                23
-                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-max px-3 py-1 bg-stone-900 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-stone-900">Retiro Restauração</div>
-                            </div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">24</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">25</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">26</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">27</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">28</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">29</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">30</div>
-                            <div class="text-stone-300 py-2">1</div><div class="text-stone-300 py-2">2</div>
-                        </div>
-                    </div>
-
-                    <!-- Lado Direito: Lista de Eventos (List Group) -->
-                    <div class="w-full lg:w-[60%] flex flex-col pt-4 lg:pt-0">
-                        
-                        <!-- Item 1 -->
-                        <div class="group flex flex-col sm:flex-row sm:items-center py-8 border-b border-stone-300/60 hover:border-[#8B5E41] transition-colors duration-300 gap-6 lg:gap-8">
-                            <!-- Data Emblema -->
-                            <div class="shrink-0 text-center w-24">
-                                <p class="text-xs font-sans font-bold text-[#C27A5B] uppercase tracking-widest mb-1 group-hover:-translate-y-1 transition-transform">NOV</p>
-                                <p class="text-5xl font-newsreader font-light text-stone-900 group-hover:text-[#8B5E41] transition-colors">15</p>
-                            </div>
-                            <!-- Infos -->
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-sans font-bold text-stone-800 mb-2 group-hover:text-[#8B5E41] transition-colors">Conferência Filha Amada</h4>
-                                <p class="text-stone-500 font-sans flex items-center gap-2">
-                                    <iconify-icon icon="solar:map-point-bold-duotone" class="text-stone-400"></iconify-icon> São Paulo, SP
-                                </p>
-                            </div>
-                            <!-- CTA -->
-                            <div class="shrink-0 mt-4 sm:mt-0">
-                                <button class="px-6 py-3 bg-white border border-stone-200 text-stone-700 rounded-full text-sm font-sans font-semibold inline-flex items-center gap-2 shadow-sm focus:outline-none hover:bg-[#8B5E41] hover:border-[#8B5E41] hover:text-white hover:shadow-lg transition-all duration-300 group/btn">
-                                    Garantir Ingresso <iconify-icon icon="solar:arrow-right-linear" class="group-hover/btn:translate-x-1 transition-transform text-[#8B5E41] group-hover/btn:text-white"></iconify-icon>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="group flex flex-col sm:flex-row sm:items-center py-8 border-b border-stone-300/60 hover:border-[#8B5E41] transition-colors duration-300 gap-6 lg:gap-8">
-                            <!-- Data Emblema -->
-                            <div class="shrink-0 text-center w-24">
-                                <p class="text-xs font-sans font-bold text-[#C27A5B] uppercase tracking-widest mb-1 group-hover:-translate-y-1 transition-transform">NOV</p>
-                                <p class="text-5xl font-newsreader font-light text-stone-900 group-hover:text-[#8B5E41] transition-colors">23</p>
-                            </div>
-                            <!-- Infos -->
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-sans font-bold text-stone-800 mb-2 group-hover:text-[#8B5E41] transition-colors">Retiro Restauração</h4>
-                                <p class="text-stone-500 font-sans flex items-center gap-2">
-                                    <iconify-icon icon="solar:map-point-bold-duotone" class="text-stone-400"></iconify-icon> Belo Horizonte, MG
-                                </p>
-                            </div>
-                            <!-- CTA -->
-                            <div class="shrink-0 mt-4 sm:mt-0">
-                                <button class="px-6 py-3 bg-white border border-stone-200 text-stone-700 rounded-full text-sm font-sans font-semibold inline-flex items-center gap-2 shadow-sm focus:outline-none hover:bg-[#8B5E41] hover:border-[#8B5E41] hover:text-white hover:shadow-lg transition-all duration-300 group/btn">
-                                    Saber Mais <iconify-icon icon="solar:info-circle-linear" class="group-hover/btn:scale-110 transition-transform text-[#8B5E41] group-hover/btn:text-white"></iconify-icon>
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- CENÁRIO 2: AGENDA VAZIA / CAPTURA DE LEADS (Oculto por padrão com 'hidden') -->
-                <div id="cenario-agenda-vazia" class="hidden flex-col items-center animate-fade-in w-full">
-                    <div class="w-full max-w-3xl bg-white p-8 md:p-14 rounded-[2.5rem] shadow-xl shadow-stone-900/5 border border-white relative text-center overflow-hidden mx-auto mt-8">
-                        
-                        <!-- Ornamento de background dentro do card (Mergulho suave do marrom) -->
-                        <div class="absolute -top-24 -left-24 w-64 h-64 bg-[#C27A5B] rounded-full blur-[100px] opacity-10 pointer-events-none"></div>
-
-                        <!-- Ícone Ilustrativo -->
-                        <div class="w-20 h-20 bg-stone-50 border border-stone-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
-                            <iconify-icon icon="solar:calendar-date-broken" width="40" class="text-[#8B5E41] drop-shadow-sm"></iconify-icon>
-                        </div>
-                        
-                        <p class="text-xl md:text-2xl text-stone-700 font-newsreader leading-relaxed mb-10 text-balance italic">
-                            No momento não temos eventos com inscrições abertas. Cadastre-se na nossa lista VIP para ser a primeira a saber de novas datas e locais!
-                        </p>
-                        
-                        <!-- Formulário -->
-                        <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto w-full relative z-10">
-                            <input type="email" placeholder="Digite seu melhor e-mail" required class="flex-1 px-8 py-5 rounded-full bg-stone-50 border border-stone-200 text-stone-800 font-sans focus:outline-none focus:border-[#8B5E41] focus:ring-4 focus:ring-[#8B5E41]/10 transition-all placeholder:text-stone-400 text-base shadow-inner">
-                            <button type="submit" class="px-10 py-5 bg-[#8B5E41] text-white rounded-full text-base font-sans font-bold shadow-xl shadow-[#8B5E41]/20 hover:bg-[#6A4731] hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group">
-                                Quero Ser Avisada
-                                <iconify-icon icon="solar:letter-bold-duotone" class="group-hover:rotate-12 transition-transform"></iconify-icon>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+        </div>
 
     </main>
 
-    <!-- RODAPÉ DA PÁGINA (Sexta Dobra / Conclusão) -->
-    <footer class="w-full bg-stone-900 pt-20 pb-10 px-6 md:px-12 relative overflow-hidden border-t border-white/5">
-        
-        <!-- Elemento Decorativo: Brilho sutil no fundo -->
-        <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
-            <div class="absolute bottom-[-20%] left-[10%] w-[500px] h-[500px] bg-gradient-to-tr from-[#C27A5B]/30 to-transparent rounded-full blur-[100px]"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
-            
-            <!-- Logo ou Nome -->
-            <a href="#" class="text-3xl font-newsreader font-medium text-[#EAE8DE] tracking-wide mb-8 hover:text-[#C27A5B] transition-colors">
-                Andiara
-            </a>
-
-            <!-- Menu de Navegação do Rodapé -->
-            <nav class="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
-                <a href="#hero" class="text-sm font-sans font-medium text-stone-400 hover:text-white transition-colors">Início</a>
-                <a href="#quem-sou" class="text-sm font-sans font-medium text-stone-400 hover:text-white transition-colors">Quem Sou</a>
-                <a href="#livro" class="text-sm font-sans font-medium text-stone-400 hover:text-white transition-colors">O Livro</a>
-                <a href="#eventos" class="text-sm font-sans font-medium text-stone-400 hover:text-white transition-colors">Eventos</a>
-                <a href="#agenda" class="text-sm font-sans font-medium text-stone-400 hover:text-white transition-colors">Agenda</a>
-            </nav>
-
-            <!-- Redes Sociais -->
-            <div class="flex items-center gap-4 mb-16">
-                <!-- Ícones de redes sociais usando a mesma biblioteca pré-incluída (Iconify) e cores padronizadas #8B5E41 para highlights hover -->
-                <a href="#" aria-label="Instagram" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-stone-300 hover:bg-[#8B5E41] hover:border-[#8B5E41] hover:text-white transition-all transform hover:-translate-y-1 shadow-inner hover:shadow-lg hover:shadow-[#8B5E41]/30">
-                    <iconify-icon icon="mdi:instagram" width="22"></iconify-icon>
-                </a>
-                <a href="#" aria-label="YouTube" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-stone-300 hover:bg-[#8B5E41] hover:border-[#8B5E41] hover:text-white transition-all transform hover:-translate-y-1 shadow-inner hover:shadow-lg hover:shadow-[#8B5E41]/30">
-                    <iconify-icon icon="mdi:youtube" width="24"></iconify-icon>
-                </a>
-                <a href="#" aria-label="WhatsApp" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-stone-300 hover:bg-[#8B5E41] hover:border-[#8B5E41] hover:text-white transition-all transform hover:-translate-y-1 shadow-inner hover:shadow-lg hover:shadow-[#8B5E41]/30">
-                    <iconify-icon icon="mdi:whatsapp" width="24"></iconify-icon>
-                </a>
-            </div>
-
-            <!-- Divisor Horizontal -->
-            <div class="w-full h-px bg-white/10 mb-8 max-w-5xl mx-auto"></div>
-
-            <!-- Copyright e Links Legais -->
-            <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-stone-500">
-                <p>&copy; 2024 Andiara. Todos os direitos reservados.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-stone-300 transition-colors">Política de Privacidade</a>
-                    <a href="#" class="hover:text-stone-300 transition-colors">Termos de Uso</a>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-
-    <!-- Script Observer de Animação de Entrada -->
+    <!-- SCRIPT GERAL PARA INTERCEPTAÇÃO DE CARREGAMENTO -->
     <script>
-        (function () {
-            // Inicializar ícones Lucide da página se necessário
-            if(window.lucide) {
-                lucide.createIcons();
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Seleciona todos os botões com a nova classe 'intercept-load'
+            const actionBtns = document.querySelectorAll('.intercept-load');
+            const loadingOverlay = document.getElementById('loadingOverlay');
 
-            const once = true; 
-            if (!window.__inViewIO) {
-                window.__inViewIO = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("animate");
-                            if (once) window.__inViewIO.unobserve(entry.target);
-                        }
+            if (actionBtns.length > 0 && loadingOverlay) {
+                // Adiciona o Event Listener em todos eles via laço forEach
+                actionBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault(); 
+                        
+                        // Captura dinamicamente o link exato no qual o usuário clicou (ex: home.html#livro)
+                        const targetUrl = btn.getAttribute('href') || 'home.html';
+                        
+                        // Aciona a Tela de Overlay
+                        loadingOverlay.classList.add('fade-in-active');
+                        document.body.style.overflow = 'hidden';
+
+                        // Dispara a transição em 2500ms redirecionando para a rota dinâmica correspondente
+                        setTimeout(() => {
+                            window.location.href = targetUrl; 
+                        }, 2500);
                     });
-                }, { threshold: 0.15, rootMargin: "0px -5% 0px -5%" });
-            }
-
-            document.addEventListener("DOMContentLoaded", () => {
-                document.querySelectorAll(".animate-on-scroll").forEach((el) => {
-                    window.__inViewIO.observe(el); 
                 });
-            });
-        })();
+            }
+        });
     </script>
 </body>
 </html>
