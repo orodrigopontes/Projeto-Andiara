@@ -103,11 +103,11 @@
                 </div>
             </div>
 
-            <!-- Container Principal -->
-            <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 h-full mt-10">
+            <!-- Container Principal (Usando w-1/2 no LG para forçar rigorosamente 50/50 ao invés de flex-1 que é flexível demais) -->
+            <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 h-full mt-10">
                 
                 <!-- COLUNA ESQUERDA: Textos e CTAs -->
-                <div class="flex-1 w-full [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+                <div class="w-full lg:w-1/2 shrink-0 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll max-w-2xl">
                     
                     <!-- Badge Indicativo (Tornando o design mais vivo) -->
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C27A5B]/20 bg-stone-100/30 backdrop-blur-md mb-8 shadow-sm">
@@ -116,9 +116,9 @@
                     </div>
                     
                     <!-- Headline H1 com Newsreader e estilo display -->
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-newsreader font-light text-stone-900 mb-6 leading-[1.05] tracking-tight">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-newsreader font-medium text-stone-900 mb-6 leading-[1.1]">
                         Encontre cura para as feridas da alma e redescubra sua 
-                        <span class="block text-stone-600 font-sans text-3xl md:text-5xl lg:text-5xl font-light mt-2 italic">verdadeira identidade em Cristo.</span>
+                        <span class="block text-stone-600 font-sans text-3xl md:text-4xl lg:text-5xl font-light mt-2 italic">verdadeira identidade em Cristo.</span>
                     </h1>
                     
                     <!-- Sub-headline Parágrafo (Body L/Sans com barra lateral verde sage) -->
@@ -151,7 +151,7 @@
                 </div>
 
                 <!-- COLUNA DIREITA: Visual / Imagem (Baseado no Card Instagram-Sides) -->
-                <div class="flex-1 w-full relative flex items-center justify-center mt-12 lg:mt-0 [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
+                <div class="w-full lg:w-[45%] lg:ml-auto relative flex items-center justify-center lg:justify-end mt-12 lg:mt-0 [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
                     <!-- Detalhe flutuante (ícone estrela decorativa) -->
                     <iconify-icon icon="solar:star-fall-linear" width="48" class="absolute top-0 right-10 text-stone-400/50 animate-pulse hidden md:block"></iconify-icon>
                     
@@ -186,6 +186,191 @@
                         </div>
                         <!-- Borda Serrilhada inferior -->
                         <div class="h-3 w-full bg-[#E6E3D6]" style="mask-image: radial-gradient(circle at 10px 0, transparent 0, transparent 5px, black 5px); mask-size: 20px 10px; mask-repeat: repeat-x;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO: QUEM É ANDIARA (Sobre) -->
+        <section id="quem-e" class="w-full bg-[#EAE8DE] py-24 px-6 md:px-12 relative overflow-hidden">
+            <!-- Grid Pattern background -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-20 mt-10"></div>
+            
+            <div class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+                
+                <!-- Imagem / Visual (Esquerda desktop, topo mobile) -->
+                <div class="w-full lg:w-[45%] flex justify-center lg:justify-start mt-12 md:mt-0 relative">
+                    <!-- Efeito Blur Escondido para glow -->
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-[#C27A5B] rounded-full blur-[100px] opacity-20 pointer-events-none animate-pulse"></div>
+                    
+                    <!-- Container da Imagem com as sombras, bordas e proporções do sistema -->
+                    <div class="relative w-full max-w-sm lg:max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
+                        <!-- Imagem Placeholder (Reutilizando Foto1 para consistency visual) -->
+                        <img src="Assets/Foto2.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Andiara Pereira Biografia"/>
+                        
+                        <!-- Sobreposição Elegante -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1c1917]/90 via-[#1c1917]/20 to-transparent"></div>
+                        
+                        <!-- Detalhe da tipografia do design system intrínseca à foto -->
+                        <div class="absolute bottom-6 left-6 transition-transform duration-500 group-hover:-translate-y-2 text-[#E6E3D6]">
+                            <h3 class="text-2xl md:text-3xl font-newsreader font-light">Andiara Pereira</h3>
+                            <p class="text-xs md:text-sm font-sans tracking-widest uppercase text-[#9EA08F] mt-1">Autora & Palestrante</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Textos e Tipos (Direita desktop, base mobile) -->
+                <div class="flex-1 w-full [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
+
+                    
+                    <div class="space-y-6 text-lg text-stone-600 font-sans leading-relaxed">
+                        <p>
+                            A trajetória de Andiara Pereira é marcada por uma fé inabalável que transformou dores profundas em um propósito de vida. Ela conhece de perto o peso de um divórcio e o luto avassalador de oito perdas gestacionais.
+                        </p>
+                        <!-- Quote Box: Redesenhado levemente com bloco para não expandir as barras laterais desnecessárias -->
+                        <blockquote class="border-l-4 border-[#9EA08F] pl-6 py-4 italic text-stone-700 bg-white/50 rounded-r-2xl shadow-sm my-8">
+                            Mas, foi exatamente no meio dessa dor, quando tudo parecia perdido, que ela encontrou a verdadeira cura, restauração e o amor incondicional de Jesus.
+                        </blockquote>
+                        <p>
+                            Hoje, Andiara é autora, palestrante e criadora de conteúdo cristã, dedicando sua vida a ser uma voz de esperança. Usando seu próprio testemunho, ela mostra a mulheres e adolescentes que as feridas do passado não têm poder para definir quem elas são. Você não é a sua dor. Você é quem Deus diz que você é.
+                        </p>
+                    </div>
+                    
+                    <!-- Decoração Extra para Autoridade / Confiança (Ícone + Frase de Missão) -->
+                    <div class="mt-12 flex items-center gap-6 pt-8 border-t border-stone-300/50 max-w-lg">
+                        <div class="flex-1">
+                            <p class="text-xs uppercase tracking-widest text-[#C27A5B] font-bold mb-1">Missão</p>
+                            <p class="font-newsreader text-2xl text-stone-800">Restaurando Vidas pelo Amor</p>
+                        </div>
+                        <iconify-icon icon="solar:leaf-bold-duotone" width="48" class="text-[#9EA08F] opacity-50"></iconify-icon>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO: O LIVRO 'FILHA AMADA' -->
+        <section id="livro" class="w-full bg-[#E6E3D6] py-24 px-6 md:px-12 relative overflow-hidden">
+            <!-- Background glow suave do sistema para dar o tom da carta de amor -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#9EA08F] to-transparent rounded-full blur-[150px] opacity-20"></div>
+                <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#C27A5B] to-transparent rounded-full blur-[120px] opacity-10"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+                
+
+
+                <!-- Grid principal envolvente (Textos rodeando o Livro no centro) -->
+                <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center lg:items-stretch">
+                    
+                    <!-- Coluna Esquerda LG (Problema e Convite) -->
+                    <div class="lg:col-span-4 flex flex-col justify-center gap-6 lg:text-right order-2 lg:order-1 items-start lg:items-end w-full lg:pr-6 lg:border-r-2 border-[#C27A5B]/20">
+                        <p class="text-lg md:text-xl text-stone-600 font-sans leading-relaxed">
+                            Você carrega dores que parecem insuportáveis? Sentimentos de rejeição, medo ou orfandade espiritual têm paralisado a sua vida?
+                        </p>
+                        <p class="text-lg text-stone-600 font-sans leading-relaxed">
+                            O livro <strong class="text-stone-800">'Filha Amada'</strong> foi escrito pensando em você. Este livro não é apenas uma leitura, é um convite divino para uma mudança profunda na forma como você se vê e se relaciona com o Pai.
+                        </p>
+                        <div class="w-full h-px bg-stone-300/60 my-2 block lg:hidden"></div>
+                        <p class="text-base font-sans font-medium text-[#C27A5B] tracking-wide mt-2">
+                            Em suas páginas, Andiara guia você por um caminho de descobertas:
+                        </p>
+                    </div>
+
+                    <!-- Coluna Central LG (O Livro - Destaque Visual) -->
+                    <div class="lg:col-span-4 flex justify-center items-center order-1 lg:order-2 w-full relative z-20 pt-8 lg:pt-0 pb-12 lg:pb-0">
+                        <!-- Glow forte focado no livro estilo design_system -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 lg:w-96 lg:h-96 bg-[#C27A5B] rounded-full blur-[90px] opacity-20 pointer-events-none"></div>
+                        
+                        <!-- Livro Placeholder (Simulação de um formato impresso luxuoso) -->
+                        <div class="group relative w-64 md:w-72 lg:w-80 aspect-[2.8/4] rounded-r-3xl rounded-l-md shadow-2xl border border-stone-300/50 bg-[#E6E3D6] overflow-hidden transition-all duration-700 hover:scale-105 hover:-translate-y-4 hover:rotate-3 flex flex-col items-center justify-center p-8 text-center" style="--border-gradient: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0));">
+                            
+                            <!-- Imagem Temporária do Livro usando Foto Placeholder mesclada escurecida para fundo-->
+                            <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply grayscale" alt="Livro Filha Amada Base"/>
+                            <div class="absolute inset-0 bg-gradient-to-b from-[#312c29]/90 via-[#453831]/80 to-[#2c221e]/95"></div>
+
+                            <!-- Mockup Conteúdo da Capa -->
+                            <div class="relative z-10 w-full h-full border-2 border-[#C27A5B]/40 rounded-sm p-6 flex flex-col justify-between items-center bg-transparent">
+                                <p class="text-[#E6E3D6] text-[10px] font-sans tracking-[0.3em] uppercase opacity-70 mt-2">Andiara Pereira</p>
+                                
+                                <div class="w-full flex justify-center my-auto relative">
+                                    <iconify-icon icon="solar:crown-minimalistic-bold-duotone" width="36" class="absolute -top-12 text-[#C27A5B] opacity-90"></iconify-icon>
+                                    <h3 class="text-[#E6E3D6] font-newsreader text-5xl font-light italic leading-tight text-center drop-shadow-md">Filha<br>Amada</h3>
+                                </div>
+
+                                <div class="w-8 h-[1px] bg-[#C27A5B]/60 mb-2"></div>
+                            </div>
+                            
+                            <!-- Lombada/Dobra Shadow (Efeito Livro 3D) -->
+                            <div class="absolute top-0 bottom-0 left-0 w-6 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+                            
+                            <!-- Efeito Highlight Vidro (Animação originada do Hover System) -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 w-[200%] h-full transform -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-[1.5s] ease-out z-20 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita LG (Benefícios, Hook e Botão) -->
+                    <div class="lg:col-span-4 flex flex-col justify-center gap-10 order-3 lg:order-3 items-start w-full lg:pl-6">
+                        
+                        <!-- Lista de Tópicos (Features com ícones minimalistas de cura e amor) -->
+                        <ul class="space-y-6 lg:space-y-8 w-full border-t-2 border-[#C27A5B]/20 lg:border-none pt-8 lg:pt-0">
+                            <!-- Feature 1 -->
+                            <li class="flex items-start gap-5 group/item">
+                                <div class="w-12 h-12 shrink-0 rounded-full bg-white/60 backdrop-blur-sm shadow-sm flex items-center justify-center border border-stone-200 group-hover/item:border-[#C27A5B] group-hover/item:bg-white group-hover/item:scale-110 group-hover/item:-translate-y-1 transition-all duration-300">
+                                    <iconify-icon icon="solar:star-fall-bold-duotone" width="24" class="text-[#9EA08F] group-hover/item:text-[#C27A5B] transition-colors"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-sans font-bold text-stone-900 mb-1 lg:text-lg">Restauração da Identidade</h4>
+                                    <p class="font-sans text-sm md:text-base text-stone-600 leading-relaxed">Entenda, de uma vez por todas, o que significa ser escolhida e amada por Deus.</p>
+                                </div>
+                            </li>
+                            <!-- Feature 2 -->
+                            <li class="flex items-start gap-5 group/item">
+                                <div class="w-12 h-12 shrink-0 rounded-full bg-white/60 backdrop-blur-sm shadow-sm flex items-center justify-center border border-stone-200 group-hover/item:border-[#C27A5B] group-hover/item:bg-white group-hover/item:scale-110 group-hover/item:-translate-y-1 transition-all duration-300">
+                                    <iconify-icon icon="solar:hand-heart-bold-duotone" width="24" class="text-[#9EA08F] group-hover/item:text-[#C27A5B] transition-colors"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-sans font-bold text-stone-900 mb-1 lg:text-lg">Cura Emocional</h4>
+                                    <p class="font-sans text-sm md:text-base text-stone-600 leading-relaxed">Aprenda a entregar suas dores mais profundas a Quem realmente pode curá-las.</p>
+                                </div>
+                            </li>
+                            <!-- Feature 3 -->
+                            <li class="flex items-start gap-5 group/item">
+                                <div class="w-12 h-12 shrink-0 rounded-full bg-white/60 backdrop-blur-sm shadow-sm flex items-center justify-center border border-stone-200 group-hover/item:border-[#C27A5B] group-hover/item:bg-white group-hover/item:scale-110 group-hover/item:-translate-y-1 transition-all duration-300">
+                                    <iconify-icon icon="solar:eye-scan-bold-duotone" width="24" class="text-[#9EA08F] group-hover/item:text-[#C27A5B] transition-colors"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-sans font-bold text-stone-900 mb-1 lg:text-lg">Mudança de Perspectiva</h4>
+                                    <p class="font-sans text-sm md:text-base text-stone-600 leading-relaxed">Comece a viver com a confiança e a liberdade que só uma verdadeira Filha Amada possui.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Bloco Fechamento (Hook Escrito + CTA Primário) -->
+                        <div class="w-full bg-stone-100/50 p-6 md:p-8 rounded-3xl border border-white relative overflow-hidden flex flex-col gap-6 shadow-sm mt-4 lg:mt-0">
+                            <!-- Background Decorativo Subtil da caixa -->
+                            <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-[#C27A5B]/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                            <p class="text-2xl font-newsreader font-medium text-stone-900 italic text-center text-balance leading-snug">
+                                Descubra que você é amada. <br class="hidden sm:block">Descubra que você pertence.
+                            </p>
+
+                            <!-- BOTÃO PRINCIPAL (Idêntico ao Hover Dinâmico da Hero) -->
+                            <button class="group relative w-full sm:w-auto self-center px-8 py-5 bg-stone-900 text-[#E6E3D6] rounded-full text-[15px] font-sans font-medium flex items-center justify-center gap-3 overflow-hidden shadow-xl shadow-stone-900/20 hover:-translate-y-1 transition-all duration-300 mt-2">
+                                <!-- Borda animada conic gradient (Hover Beam Effect) -->
+                                <span class="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#E6E3D6_100%)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                <!-- Cobertura da borda interna -->
+                                <span class="absolute inset-[1px] bg-stone-800 rounded-full z-0 group-hover:bg-stone-900 transition-colors"></span>
+                                
+                                <span class="relative z-10 flex items-center gap-2"> 
+                                    Quero Ler "Filha Amada" 
+                                    <iconify-icon icon="solar:book-bookmark-linear" width="22" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></iconify-icon>
+                                </span>
+                            </button>
+                        </div>
+                        
                     </div>
                 </div>
 
