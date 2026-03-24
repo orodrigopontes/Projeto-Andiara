@@ -157,9 +157,10 @@
                     
                     <!-- Card Visual Principal com borda gradiente -->
                     <div class="relative w-full max-w-md aspect-[3/4] group shadow-2xl rounded-t-[10rem] rounded-b-[2rem] overflow-hidden" style="--border-gradient: linear-gradient(180deg, rgba(38,38,36,0.3), rgba(38,38,36,0)); --border-radius-before: 2rem;">
-                        <!-- Placeholder Imagem Andiara -->
-                        <!-- Usando a imagem local do design system como placeholder de alta qualidade -->
-                        <img src="Assets/Foto2.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:-scale-x-[1.05] opacity-90 scale-x-[-1]" alt="Andiara Pereira"/>
+                        <!-- Wrapper para manter a inversão da imagem (scale-x-[-1]) e permitir o zoom limpo no hover -->
+                        <div class="absolute inset-0 w-full h-full transform scale-x-[-1]">
+                            <img src="Assets/Foto2.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" alt="Andiara Pereira"/>
+                        </div>
                         
                         <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent"></div>
                         
