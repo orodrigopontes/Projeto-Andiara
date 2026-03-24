@@ -422,53 +422,58 @@
 
                 </div>
 
-                <!-- Galeria de Experiência Visual (Grid Automático - Disposição Mosaico Restaurada) -->
-                <div class="w-full [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
+                <!-- Nova Galeria (Bento Grid 12-cols) -->
+                <div class="w-full [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll mt-8">
                     
-                    <div class="flex items-center justify-between mb-10">
-                        <h4 class="text-xs md:text-sm font-sans font-semibold text-[#EAE8DE] uppercase tracking-[0.2em]">Registros dos Encontros</h4>
-                        <div class="h-px bg-white/10 flex-1 ml-6 lg:ml-10"></div>
+                    <!-- Cabeçalho idêntico à mockup -->
+                    <div class="mb-10 flex items-center gap-6">
+                        <h2 class="text-sm font-sans font-bold text-[#E6E3D6] tracking-[0.2em] uppercase whitespace-nowrap">
+                            Registros dos Encontros
+                        </h2>
+                        <div class="h-[1px] bg-white/20 flex-1"></div>
                     </div>
 
-                    <!-- CSS Grid Mosaico Dinâmico 4x2 na LG, 2x... na SM -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 auto-rows-[180px] md:auto-rows-[240px]">
+                    <!-- Bento Grid / Custom Grid idêntico à mockup (12 colunas) -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 auto-rows-[220px] md:auto-rows-[280px] gap-4">
                         
-                        <!-- Imagem 1 (Larga) -->
-                        <div class="col-span-2 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-stone-900/40 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto2.jpeg" alt="Auditório Cheio - Andiara" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] mix-blend-luminosity hover:mix-blend-normal blur-[1px] group-hover:blur-none"/>
-                        </div>
-                        
-                        <!-- Imagem 2 (Normal) -->
-                        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-[#C27A5B]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto1.jpeg" alt="Momento de Oração - Andiara" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
+                        <!-- Top Left (Wide, detalhe gola) -->
+                        <div class="md:col-span-6 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3975.jpg">
+                            <img src="Assets/fotos/2B8A3975.jpg" loading="lazy" decoding="async" style="will-change: transform;" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 1"/>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                         </div>
 
-                        <!-- Imagem 3 (Alta - Ocupa 2 linhas em telas maiores) -->
-                        <div class="col-span-1 row-span-2 hidden md:block rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-stone-900/60 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto2.jpeg" alt="Abraço - Encontro Filha Amada" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] opacity-80 hover:opacity-100 object-top"/>
+                        <!-- Top Middle (Portrait, sentada paletó claro) -->
+                        <div class="md:col-span-3 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A4148.jpg">
+                            <img src="Assets/fotos/2B8A4148.jpg" loading="lazy" decoding="async" style="will-change: transform;" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 2"/>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                         </div>
 
-                        <!-- Imagem 4 (Normal) -->
-                        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-[#453831]/40 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto1.jpeg" alt="Mulheres Sorrindo" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
+                        <!-- Right Tall (Portrait Altão, de frente paletó marrom) -->
+                        <div class="md:col-span-3 md:row-span-2 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A4319.jpg">
+                            <img src="Assets/fotos/2B8A4319.jpg" loading="lazy" decoding="async" style="will-change: transform;" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 3"/>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                         </div>
 
-                        <!-- Imagem 5 (Larga) -->
-                        <div class="col-span-2 md:col-span-2 row-span-1 rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-stone-900/50 group-hover:bg-stone-900/10 transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto2.jpeg" alt="Andiara no Palco" class="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] opacity-90 hover:opacity-100 object-center"/>
+                        <!-- Bottom Left (Portrait, sentada paletó escuro/cinza) -->
+                        <div class="md:col-span-3 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A4602.jpg">
+                            <img src="Assets/fotos/2B8A4602.jpg" loading="lazy" decoding="async" style="will-change: transform;" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 4"/>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                         </div>
 
-                        <!-- Imagem 6 (Normal - Mobile apenas) -->
-                        <div class="col-span-1 row-span-1 md:hidden rounded-2xl overflow-hidden relative group cursor-pointer border border-white/5 shadow-xl">
-                            <div class="absolute inset-0 bg-[#C27A5B]/30 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                            <img src="Assets/Foto1.jpeg" alt="Emoção" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] grayscale hover:grayscale-0"/>
+                        <!-- Bottom Middle (Wide, detalhe colo/gola 2) -->
+                        <div class="md:col-span-6 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A4666.jpg">
+                            <img src="Assets/fotos/2B8A4666.jpg" loading="lazy" decoding="async" style="will-change: transform;" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 5"/>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                         </div>
 
+                    </div>
+
+                    <!-- Botão central ver mais -->
+                    <div class="text-center mt-12">
+                        <a href="galeria.html" class="intercept-load inline-flex items-center gap-3 px-10 py-4 bg-transparent border border-white/20 text-[#E6E3D6] rounded-full text-sm font-sans font-bold shadow-xl shadow-black/10 hover:bg-white hover:text-[#C27A5B] transition-all hover:-translate-y-1">
+                            <iconify-icon icon="solar:gallery-wide-bold-duotone" width="20"></iconify-icon>
+                            Ver Todas as Fotos
+                        </a>
                     </div>
                 </div>
 
@@ -617,66 +622,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO: GALERIA DE FOTOS (Registros dos Encontros) -->
-        <section id="galeria" class="w-full bg-[#C27A5B] py-20 px-6 md:px-12 relative overflow-hidden">
-            <!-- Glow decorativo -->
-            <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
-                <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-[#8B5E41] to-transparent rounded-full blur-[120px]"></div>
-            </div>
 
-            <div class="max-w-6xl mx-auto relative z-10">
-                <!-- Cabeçalho idêntico à mockup -->
-                <div class="mb-10 flex items-center gap-6">
-                    <h2 class="text-sm font-sans font-bold text-[#E6E3D6] tracking-[0.2em] uppercase whitespace-nowrap">
-                        Registros dos Encontros
-                    </h2>
-                    <div class="h-[1px] bg-white/20 flex-1"></div>
-                </div>
-
-                <!-- Bento Grid / Custom Grid idêntico à mockup (12 colunas) -->
-                <div class="grid grid-cols-1 md:grid-cols-12 auto-rows-[220px] md:auto-rows-[280px] gap-4">
-                    
-                    <!-- Top Left (Wide, detalhe gola) -->
-                    <div class="md:col-span-6 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3607.jpg">
-                        <img src="Assets/fotos/2B8A3607.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 1"/>
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-                    </div>
-
-                    <!-- Top Middle (Portrait, sentada paletó claro) -->
-                    <div class="md:col-span-3 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3613.jpg">
-                        <img src="Assets/fotos/2B8A3613.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 2"/>
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-                    </div>
-
-                    <!-- Right Tall (Portrait Altão, de frente paletó marrom) -->
-                    <div class="md:col-span-3 md:row-span-2 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3638.jpg">
-                        <img src="Assets/fotos/2B8A3638.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 3"/>
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-                    </div>
-
-                    <!-- Bottom Left (Portrait, sentada paletó escuro/cinza) -->
-                    <div class="md:col-span-3 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3683.jpg">
-                        <img src="Assets/fotos/2B8A3683.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 4"/>
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-                    </div>
-
-                    <!-- Bottom Middle (Wide, detalhe colo/gola 2) -->
-                    <div class="md:col-span-6 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3872.jpg">
-                        <img src="Assets/fotos/2B8A3872.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 5"/>
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-                    </div>
-
-                </div>
-
-                <!-- Botão central ver mais -->
-                <div class="text-center mt-12">
-                    <a href="galeria.html" class="intercept-load inline-flex items-center gap-3 px-10 py-4 bg-transparent border border-white/20 text-[#E6E3D6] rounded-full text-sm font-sans font-bold hover:bg-white hover:text-[#C27A5B] transition-all hover:-translate-y-1">
-                        <iconify-icon icon="solar:gallery-wide-bold-duotone" width="20"></iconify-icon>
-                        Ver Todas as Fotos
-                    </a>
-                </div>
-            </div>
-        </section>
 
     </main>
 
@@ -691,7 +637,7 @@
         <button onclick="nextLightbox()" class="absolute right-4 md:right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer">
             <iconify-icon icon="solar:arrow-right-bold" width="28"></iconify-icon>
         </button>
-        <img id="lightbox-img" src="" alt="Ampliada" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-transform duration-300 scale-95"/>
+        <img id="lightbox-img" src="" alt="Ampliada" decoding="async" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-transform duration-300 scale-95"/>
     </div>
 
     <!-- SCRIPT DO LIGHTBOX SIMPLIFICADO GLOBALMENTE -->
