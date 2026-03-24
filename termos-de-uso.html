@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso | Andiara Pereira</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-newsreader { font-family: 'Newsreader', serif; }
+        .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { 
+            background-color: #EAE8DE; 
+            color: #312c29; 
+        }
+
+        /* Animações Loading */
+        @keyframes pulseText {
+            0% { opacity: 0.15; transform: scale(0.97); }
+            50% { opacity: 1; transform: scale(1.01); text-shadow: 0 0 15px rgba(139, 94, 65, 0.2); }
+            100% { opacity: 0.15; transform: scale(0.97); }
+        }
+        .animate-pulse-text {
+            animation: pulseText 1.5s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOverlay {
+            from { opacity: 0; backdrop-filter: blur(0px); }
+            to { opacity: 1; backdrop-filter: blur(8px); }
+        }
+        .fade-in-active {
+            display: flex !important;
+            animation: fadeInOverlay 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- OVERLAY DE LOADING OCULTO -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-[#EAE8DE]/95 z-[9999] hidden flex-col items-center justify-center" style="display: none;">
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[#C27A5B] rounded-full blur-[80px]"></div>
+        </div>
+        <h2 class="relative z-10 w-full text-xl sm:text-2xl md:text-3xl lg:text-4xl font-newsreader font-light tracking-[0.2em] sm:tracking-[0.3em] uppercase text-stone-800 animate-pulse-text text-center whitespace-nowrap">
+            Curando Feridas
+        </h2>
+    </div>
+
+    <!-- NAVEGAÇÃO SUPERIOR -->
+    <header class="w-full relative z-50 pt-8 pb-4 px-6 md:px-12 flex justify-between items-center bg-[#EAE8DE]">
+        <a href="home.html" class="intercept-load text-2xl md:text-3xl font-newsreader font-medium text-stone-800 tracking-wide hover:text-[#C27A5B] transition-colors">
+            Andiara
+        </a>
+        <a href="home.html" class="intercept-load inline-flex items-center gap-2 text-sm font-sans font-bold text-stone-600 hover:text-[#8B5E41] transition-colors group">
+            <iconify-icon icon="solar:arrow-left-linear" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
+            Voltar ao Início
+        </a>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (Termos) -->
+    <main class="flex-1 w-full max-w-4xl mx-auto px-6 py-16 md:py-24">
+        
+        <div class="mb-16">
+            <p class="text-[10px] md:text-xs font-sans font-bold text-[#C27A5B] uppercase tracking-[0.2em] mb-4">Informação Legal</p>
+            <h1 class="text-4xl md:text-6xl font-newsreader font-medium text-stone-900 leading-tight mb-6">Termos de Uso</h1>
+            <p class="text-stone-500 font-sans text-sm md:text-base">Última atualização: Outubro de 2024</p>
+            <div class="w-full h-px bg-stone-300 mt-10"></div>
+        </div>
+
+        <article class="prose prose-stone max-w-none font-sans text-stone-700 leading-relaxed text-base md:text-lg">
+            
+            <p class="mb-8">
+                Ao acessar nosso site, você concorda em cumprir estes termos de uso, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. 
+            </p>
+
+            <h2 class="text-2xl font-newsreader font-medium text-stone-900 mt-12 mb-6">1. Uso de Licença</h2>
+            <p class="mb-8">
+                É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site da Andiara, apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título. Diferente do acordado, fica estritamente proibido tentar descompilar ou fazer engenharia reversa de qualquer software contido no site ou remover quaisquer direitos autorais.
+            </p>
+
+            <h2 class="text-2xl font-newsreader font-medium text-stone-900 mt-12 mb-6">2. Isenção de responsabilidade</h2>
+            <p class="mb-8">
+                Os materiais no site são fornecidos 'como estão'. A Andiara não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.
+            </p>
+
+            <h2 class="text-2xl font-newsreader font-medium text-stone-900 mt-12 mb-6">3. Limitações</h2>
+            <p class="mb-8">
+                Em nenhum caso a Andiara ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais, mesmo que a Andiara ou um representante autorizado da Andiara tenha sido notificado oralmente ou por escrito da possibilidade de tais danos.
+            </p>
+
+            <h2 class="text-2xl font-newsreader font-medium text-stone-900 mt-12 mb-6">4. Modificações</h2>
+            <p class="mb-8">
+                A Andiara pode revisar estes termos de uso para seu site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de uso. Dificultar o acesso a páginas ou modificar layout faz parte de nossas contínuas otimizações.
+            </p>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-200 mt-16 text-center">
+                <iconify-icon icon="solar:bookmark-circle-bold-duotone" width="40" class="text-[#8B5E41] mb-6 drop-shadow-sm"></iconify-icon>
+                <h3 class="text-2xl font-newsreader font-medium text-stone-900 mb-4">Ainda tem dúvidas?</h3>
+                <p class="text-stone-600 mb-8 font-sans">Se você tiver alguma dúvida sobre nossos termos ou como os materiais interagem com nossos serviços, não hesite.</p>
+                <a href="https://wa.me/" class="intercept-load inline-flex items-center gap-2 px-8 py-4 bg-[#8B5E41] text-white rounded-full font-sans font-bold text-sm shadow-xl shadow-[#8B5E41]/20 hover:bg-[#6A4731] transition-all hover:-translate-y-1 mb-4">
+                    Fale com o Suporte
+                </a>
+                <a href="home.html" class="intercept-load inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-stone-300 text-stone-700 rounded-full font-sans font-bold text-sm hover:bg-stone-100 transition-all">
+                    <iconify-icon icon="solar:arrow-left-linear"></iconify-icon>
+                    Voltar à Página Inicial
+                </a>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- RODAPÉ COMPACTO -->
+    <footer class="w-full bg-stone-900 pt-16 pb-10 px-6 mt-12 border-t border-white/5 relative overflow-hidden text-center">
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+            <a href="home.html" class="intercept-load text-2xl font-newsreader font-medium text-[#EAE8DE] tracking-wide mb-6 hover:text-[#C27A5B] transition-colors">
+                Andiara
+            </a>
+            <div class="w-full h-px bg-white/10 mb-6 max-w-md"></div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-sans text-stone-500">
+                <p>&copy; 2024 Andiara. Todos os direitos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="politica-de-privacidade.html" class="intercept-load hover:text-stone-300 transition-colors">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE INTERCEPTAÇÃO E ANIMAÇÃO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const actionBtns = document.querySelectorAll('.intercept-load');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            if (actionBtns.length > 0 && loadingOverlay) {
+                actionBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault(); 
+                        const targetUrl = btn.getAttribute('href');
+                        
+                        loadingOverlay.classList.add('fade-in-active');
+                        document.body.style.overflow = 'hidden';
+
+                        setTimeout(() => {
+                            window.location.href = targetUrl; 
+                        }, 2000); // 2000ms de animação
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

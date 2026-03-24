@@ -159,7 +159,7 @@
                     <div class="relative w-full max-w-md aspect-[3/4] group shadow-2xl rounded-t-[10rem] rounded-b-[2rem] overflow-hidden" style="--border-gradient: linear-gradient(180deg, rgba(38,38,36,0.3), rgba(38,38,36,0)); --border-radius-before: 2rem;">
                         <!-- Placeholder Imagem Andiara -->
                         <!-- Usando a imagem local do design system como placeholder de alta qualidade -->
-                        <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" alt="Andiara Pereira"/>
+                        <img src="Assets/Foto2.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:-scale-x-[1.05] opacity-90 scale-x-[-1]" alt="Andiara Pereira"/>
                         
                         <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent"></div>
                         
@@ -187,7 +187,7 @@
                     <!-- Container da Imagem com as sombras, bordas e proporções do sistema -->
                     <div class="relative w-full max-w-sm lg:max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
                         <!-- Imagem Placeholder (Reutilizando Foto1 para consistency visual) -->
-                        <img src="Assets/Foto2.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Andiara Pereira Biografia"/>
+                        <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Andiara Pereira Biografia"/>
                         
                         <!-- Sobreposição Elegante -->
                         <div class="absolute inset-0 bg-gradient-to-t from-[#1c1917]/90 via-[#1c1917]/20 to-transparent"></div>
@@ -507,121 +507,254 @@
                     <div class="w-full lg:w-[40%] bg-white p-6 lg:p-8 rounded-3xl shadow-sm border border-stone-200">
                         <!-- Header Calendar -->
                         <div class="flex items-center justify-between mb-8">
-                            <h3 class="font-sans font-bold text-stone-800 text-lg">Novembro 2024</h3>
+                            <h3 id="cal-month-title" class="font-sans font-bold text-stone-800 text-lg">Janeiro 2026</h3>
                             <div class="flex gap-2">
-                                <button class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center hover:bg-stone-200 hover:text-stone-800 text-stone-500 transition-colors"><iconify-icon icon="solar:alt-arrow-left-line-duotone"></iconify-icon></button>
-                                <button class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center hover:bg-stone-200 hover:text-stone-800 text-stone-500 transition-colors"><iconify-icon icon="solar:alt-arrow-right-line-duotone"></iconify-icon></button>
+                                <button onclick="changeMonth(-1)" class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center hover:bg-stone-200 hover:text-stone-800 text-stone-500 transition-colors"><iconify-icon icon="solar:alt-arrow-left-line-duotone"></iconify-icon></button>
+                                <button onclick="changeMonth(1)" class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center hover:bg-stone-200 hover:text-stone-800 text-stone-500 transition-colors"><iconify-icon icon="solar:alt-arrow-right-line-duotone"></iconify-icon></button>
                             </div>
                         </div>
                         <!-- Dias da semana -->
                         <div class="grid grid-cols-7 gap-2 mb-4 text-center text-xs font-sans font-bold text-stone-400">
                             <div>D</div><div>S</div><div>T</div><div>Q</div><div>Q</div><div>S</div><div>S</div>
                         </div>
-                        <!-- Dias do mês -->
-                        <div class="grid grid-cols-7 gap-2 text-center text-sm md:text-base font-sans text-stone-700 font-medium">
-                            <div class="text-stone-300 py-2">29</div><div class="text-stone-300 py-2">30</div><div class="text-stone-300 py-2">31</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">1</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">2</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">3</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">4</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">5</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">6</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">7</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">8</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">9</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">10</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">11</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">12</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">13</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">14</div>
-                            <!-- Data Destaque (Evento 1) -->
-                            <div class="py-2 bg-[#8B5E41] text-white rounded-lg font-bold shadow-md shadow-[#8B5E41]/30 cursor-pointer hover:scale-105 hover:-translate-y-1 transition-transform border border-[#8B5E41] relative group">
-                                15
-                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-max px-3 py-1 bg-stone-900 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-stone-900">Conferência</div>
-                            </div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">16</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">17</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">18</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">19</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">20</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">21</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">22</div>
-                            <!-- Data Destaque (Evento 2) -->
-                            <div class="py-2 bg-[#8B5E41] text-white rounded-lg font-bold shadow-md shadow-[#8B5E41]/30 cursor-pointer hover:scale-105 hover:-translate-y-1 transition-transform border border-[#8B5E41] relative group">
-                                23
-                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-max px-3 py-1 bg-stone-900 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-stone-900">Retiro Restauração</div>
-                            </div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">24</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">25</div>
-                            <div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">26</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">27</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">28</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">29</div><div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors">30</div>
-                            <div class="text-stone-300 py-2">1</div><div class="text-stone-300 py-2">2</div>
+                        <!-- Dias do mês (Gerado Dinamicamente) -->
+                        <div id="cal-days-grid" class="grid grid-cols-7 gap-2 text-center text-sm md:text-base font-sans text-stone-700 font-medium">
+                            <!-- JS vai preencher aqui -->
                         </div>
                     </div>
 
                     <!-- Lado Direito: Lista de Eventos (List Group) -->
                     <div class="w-full lg:w-[60%] flex flex-col pt-4 lg:pt-0">
                         
-                        <!-- Item 1 -->
-                        <div class="group flex flex-col sm:flex-row sm:items-center py-8 border-b border-stone-300/60 hover:border-[#8B5E41] transition-colors duration-300 gap-6 lg:gap-8">
-                            <!-- Data Emblema -->
-                            <div class="shrink-0 text-center w-24">
-                                <p class="text-xs font-sans font-bold text-[#C27A5B] uppercase tracking-widest mb-1 group-hover:-translate-y-1 transition-transform">NOV</p>
-                                <p class="text-5xl font-newsreader font-light text-stone-900 group-hover:text-[#8B5E41] transition-colors">15</p>
-                            </div>
-                            <!-- Infos -->
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-sans font-bold text-stone-800 mb-2 group-hover:text-[#8B5E41] transition-colors">Conferência Filha Amada</h4>
-                                <p class="text-stone-500 font-sans flex items-center gap-2">
-                                    <iconify-icon icon="solar:map-point-bold-duotone" class="text-stone-400"></iconify-icon> São Paulo, SP
-                                </p>
-                            </div>
-                            <!-- CTA -->
-                            <div class="shrink-0 mt-4 sm:mt-0">
-                                <button class="px-6 py-3 bg-white border border-stone-200 text-stone-700 rounded-full text-sm font-sans font-semibold inline-flex items-center gap-2 shadow-sm focus:outline-none hover:bg-[#8B5E41] hover:border-[#8B5E41] hover:text-white hover:shadow-lg transition-all duration-300 group/btn">
-                                    Garantir Ingresso <iconify-icon icon="solar:arrow-right-linear" class="group-hover/btn:translate-x-1 transition-transform text-[#8B5E41] group-hover/btn:text-white"></iconify-icon>
-                                </button>
-                            </div>
+                        <div id="events-list-container" class="flex flex-col">
+                            <!-- JS vai preencher aqui de acordo com o mes -->
                         </div>
 
-                        <!-- Item 2 -->
-                        <div class="group flex flex-col sm:flex-row sm:items-center py-8 border-b border-stone-300/60 hover:border-[#8B5E41] transition-colors duration-300 gap-6 lg:gap-8">
-                            <!-- Data Emblema -->
-                            <div class="shrink-0 text-center w-24">
-                                <p class="text-xs font-sans font-bold text-[#C27A5B] uppercase tracking-widest mb-1 group-hover:-translate-y-1 transition-transform">NOV</p>
-                                <p class="text-5xl font-newsreader font-light text-stone-900 group-hover:text-[#8B5E41] transition-colors">23</p>
-                            </div>
-                            <!-- Infos -->
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-sans font-bold text-stone-800 mb-2 group-hover:text-[#8B5E41] transition-colors">Retiro Restauração</h4>
-                                <p class="text-stone-500 font-sans flex items-center gap-2">
-                                    <iconify-icon icon="solar:map-point-bold-duotone" class="text-stone-400"></iconify-icon> Belo Horizonte, MG
+                        <!-- CENÁRIO 2: AGENDA VAZIA / CAPTURA DE LEADS (Exibido pela Direita) -->
+                        <div id="cenario-agenda-vazia" class="hidden flex-col items-center justify-center animate-fade-in w-full h-full min-h-[400px]">
+                            <div class="w-full bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-stone-200 relative text-center overflow-hidden">
+                                
+                                <!-- Ornamento de background dentro do card -->
+                                <div class="absolute -top-24 -left-24 w-64 h-64 bg-[#C27A5B] rounded-full blur-[100px] opacity-10 pointer-events-none"></div>
+
+                                <!-- Ícone Ilustrativo -->
+                                <div class="w-16 h-16 bg-stone-50 border border-stone-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                                    <iconify-icon icon="solar:calendar-date-broken" width="32" class="text-[#8B5E41] drop-shadow-sm"></iconify-icon>
+                                </div>
+                                
+                                <p class="text-xl md:text-2xl text-stone-700 font-newsreader leading-relaxed mb-8 text-balance italic">
+                                    No momento não temos eventos com inscrições abertas nesse mês. Cadastre-se na nossa lista VIP para ser a primeira a saber de novas datas e locais!
                                 </p>
-                            </div>
-                            <!-- CTA -->
-                            <div class="shrink-0 mt-4 sm:mt-0">
-                                <button class="px-6 py-3 bg-white border border-stone-200 text-stone-700 rounded-full text-sm font-sans font-semibold inline-flex items-center gap-2 shadow-sm focus:outline-none hover:bg-[#8B5E41] hover:border-[#8B5E41] hover:text-white hover:shadow-lg transition-all duration-300 group/btn">
-                                    Saber Mais <iconify-icon icon="solar:info-circle-linear" class="group-hover/btn:scale-110 transition-transform text-[#8B5E41] group-hover/btn:text-white"></iconify-icon>
-                                </button>
+                                
+                                <!-- Formulário -->
+                                <form class="flex flex-col sm:flex-row gap-3 w-full relative z-10">
+                                    <input type="email" placeholder="Digite seu e-mail" required class="flex-1 px-6 py-4 rounded-full bg-stone-50 border border-stone-200 text-stone-800 font-sans focus:outline-none focus:border-[#8B5E41] focus:ring-4 focus:ring-[#8B5E41]/10 transition-all placeholder:text-stone-400 text-sm shadow-inner">
+                                    <button type="submit" class="px-8 py-4 bg-[#8B5E41] text-white rounded-full text-sm font-sans font-bold shadow-xl shadow-[#8B5E41]/20 hover:bg-[#6A4731] hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group whitespace-nowrap">
+                                        Quero Ser Avisada
+                                        <iconify-icon icon="solar:letter-bold-duotone" class="group-hover:rotate-12 transition-transform"></iconify-icon>
+                                    </button>
+                                </form>
                             </div>
                         </div>
 
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- CENÁRIO 2: AGENDA VAZIA / CAPTURA DE LEADS (Oculto por padrão com 'hidden') -->
-                <div id="cenario-agenda-vazia" class="hidden flex-col items-center animate-fade-in w-full">
-                    <div class="w-full max-w-3xl bg-white p-8 md:p-14 rounded-[2.5rem] shadow-xl shadow-stone-900/5 border border-white relative text-center overflow-hidden mx-auto mt-8">
-                        
-                        <!-- Ornamento de background dentro do card (Mergulho suave do marrom) -->
-                        <div class="absolute -top-24 -left-24 w-64 h-64 bg-[#C27A5B] rounded-full blur-[100px] opacity-10 pointer-events-none"></div>
-
-                        <!-- Ícone Ilustrativo -->
-                        <div class="w-20 h-20 bg-stone-50 border border-stone-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
-                            <iconify-icon icon="solar:calendar-date-broken" width="40" class="text-[#8B5E41] drop-shadow-sm"></iconify-icon>
+        <!-- MODAL DE EVENTO -->
+        <div id="evento-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+            <!-- Overlay escuro -->
+            <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+            
+            <!-- Caixa do Modal -->
+            <div class="relative bg-[#E6E3D6] w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300" id="evento-modal-content">
+                
+                <!-- Botão Fechar -->
+                <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center text-stone-600 hover:text-stone-900 hover:bg-white transition-colors border border-stone-200">
+                    <iconify-icon icon="solar:close-circle-line-duotone" width="24"></iconify-icon>
+                </button>
+                
+                <!-- Imagem Teste / Header do pop-up -->
+                <div class="w-full h-48 bg-[#9EA08F] relative">
+                    <!-- Fundo abstrato ou imagem local -->
+                    <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" alt="Evento">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#E6E3D6] to-transparent"></div>
+                    <div class="absolute bottom-6 left-8 flex items-end gap-4">
+                        <div class="w-16 h-16 rounded-2xl bg-white shadow-lg flex flex-col items-center justify-center border border-stone-200">
+                            <span class="text-xs font-bold font-sans text-[#C27A5B] uppercase" id="modal-month">NOV</span>
+                            <span class="text-xl font-newsreader text-stone-900 leading-none" id="modal-day">15</span>
                         </div>
-                        
-                        <p class="text-xl md:text-2xl text-stone-700 font-newsreader leading-relaxed mb-10 text-balance italic">
-                            No momento não temos eventos com inscrições abertas. Cadastre-se na nossa lista VIP para ser a primeira a saber de novas datas e locais!
-                        </p>
-                        
-                        <!-- Formulário -->
-                        <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto w-full relative z-10">
-                            <input type="email" placeholder="Digite seu melhor e-mail" required class="flex-1 px-8 py-5 rounded-full bg-stone-50 border border-stone-200 text-stone-800 font-sans focus:outline-none focus:border-[#8B5E41] focus:ring-4 focus:ring-[#8B5E41]/10 transition-all placeholder:text-stone-400 text-base shadow-inner">
-                            <button type="submit" class="px-10 py-5 bg-[#8B5E41] text-white rounded-full text-base font-sans font-bold shadow-xl shadow-[#8B5E41]/20 hover:bg-[#6A4731] hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group">
-                                Quero Ser Avisada
-                                <iconify-icon icon="solar:letter-bold-duotone" class="group-hover:rotate-12 transition-transform"></iconify-icon>
-                            </button>
-                        </form>
                     </div>
                 </div>
+                
+                <!-- Corpo de infos -->
+                <div class="p-8 pt-4">
+                    <h3 id="modal-title" class="text-3xl font-newsreader font-medium text-stone-900 mb-2">Título do Evento</h3>
+                    <p id="modal-location" class="text-stone-500 font-sans flex items-center gap-2 mb-6">
+                        <iconify-icon icon="solar:map-point-bold-duotone" class="text-[#C27A5B]"></iconify-icon> <span id="modal-city">São Paulo, SP</span>
+                    </p>
+                    
+                    <div class="h-px w-full bg-stone-300 mb-6"></div>
+                    
+                    <h4 class="font-sans font-bold text-stone-800 mb-3">Sobre este evento</h4>
+                    <p id="modal-desc" class="text-stone-600 font-sans leading-relaxed text-sm md:text-base">
+                        Informação detalhada da conferência. Aqui entra o texto sobre o que vai ser abordado, qual o horário exato e o que ela precisa levar. Uma tarde inteira para ser transformada.
+                    </p>
+                    
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a id="modal-link" href="#" class="px-8 py-4 bg-[#8B5E41] text-white rounded-full text-sm font-sans font-medium hover:-translate-y-1 hover:shadow-lg hover:bg-[#6A4731] transition-all text-center flex-1">
+                            Garantir Ingresso Agora
+                        </a>
+                        <button onclick="closeModal()" class="px-8 py-4 bg-transparent border border-stone-300 text-stone-700 rounded-full text-sm font-sans font-medium hover:bg-stone-200 transition-colors text-center w-full sm:w-auto">
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             </div>
         </section>
 
+        <!-- SEÇÃO: GALERIA DE FOTOS (Registros dos Encontros) -->
+        <section id="galeria" class="w-full bg-[#C27A5B] py-20 px-6 md:px-12 relative overflow-hidden">
+            <!-- Glow decorativo -->
+            <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
+                <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-[#8B5E41] to-transparent rounded-full blur-[120px]"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <!-- Cabeçalho idêntico à mockup -->
+                <div class="mb-10 flex items-center gap-6">
+                    <h2 class="text-sm font-sans font-bold text-[#E6E3D6] tracking-[0.2em] uppercase whitespace-nowrap">
+                        Registros dos Encontros
+                    </h2>
+                    <div class="h-[1px] bg-white/20 flex-1"></div>
+                </div>
+
+                <!-- Bento Grid / Custom Grid idêntico à mockup (12 colunas) -->
+                <div class="grid grid-cols-1 md:grid-cols-12 auto-rows-[220px] md:auto-rows-[280px] gap-4">
+                    
+                    <!-- Top Left (Wide, detalhe gola) -->
+                    <div class="md:col-span-6 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3607.jpg">
+                        <img src="Assets/fotos/2B8A3607.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 1"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+
+                    <!-- Top Middle (Portrait, sentada paletó claro) -->
+                    <div class="md:col-span-3 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3613.jpg">
+                        <img src="Assets/fotos/2B8A3613.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 2"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+
+                    <!-- Right Tall (Portrait Altão, de frente paletó marrom) -->
+                    <div class="md:col-span-3 md:row-span-2 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3638.jpg">
+                        <img src="Assets/fotos/2B8A3638.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 3"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+
+                    <!-- Bottom Left (Portrait, sentada paletó escuro/cinza) -->
+                    <div class="md:col-span-3 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3683.jpg">
+                        <img src="Assets/fotos/2B8A3683.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 4"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+
+                    <!-- Bottom Middle (Wide, detalhe colo/gola 2) -->
+                    <div class="md:col-span-6 md:row-span-1 border-2 border-transparent hover:border-white/20 rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb" data-src="Assets/fotos/2B8A3872.jpg">
+                        <img src="Assets/fotos/2B8A3872.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Registro Encontro 5"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+
+                </div>
+
+                <!-- Botão central ver mais -->
+                <div class="text-center mt-12">
+                    <a href="galeria.html" class="intercept-load inline-flex items-center gap-3 px-10 py-4 bg-transparent border border-white/20 text-[#E6E3D6] rounded-full text-sm font-sans font-bold hover:bg-white hover:text-[#C27A5B] transition-all hover:-translate-y-1">
+                        <iconify-icon icon="solar:gallery-wide-bold-duotone" width="20"></iconify-icon>
+                        Ver Todas as Fotos
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- LIGHTBOX GALERIA NATIVO (Sem Javascript duplo) -->
+    <div id="lightbox" class="fixed inset-0 z-[99999] bg-stone-900/95 flex items-center justify-center backdrop-blur-md transition-opacity duration-300 opacity-0 pointer-events-none">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer">
+            <iconify-icon icon="solar:close-circle-bold" width="32"></iconify-icon>
+        </button>
+        <button onclick="prevLightbox()" class="absolute left-4 md:left-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer">
+            <iconify-icon icon="solar:arrow-left-bold" width="28"></iconify-icon>
+        </button>
+        <button onclick="nextLightbox()" class="absolute right-4 md:right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer">
+            <iconify-icon icon="solar:arrow-right-bold" width="28"></iconify-icon>
+        </button>
+        <img id="lightbox-img" src="" alt="Ampliada" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-transform duration-300 scale-95"/>
+    </div>
+
+    <!-- SCRIPT DO LIGHTBOX SIMPLIFICADO GLOBALMENTE -->
+    <script>
+        let lbIndex = 0;
+        let lbSrcs = [];
+
+        function openLightbox(index) {
+            lbIndex = index;
+            const img = document.getElementById('lightbox-img');
+            const lb = document.getElementById('lightbox');
+            img.src = lbSrcs[lbIndex];
+            img.classList.remove('scale-95');
+            img.classList.add('scale-100');
+            lb.classList.remove('opacity-0', 'pointer-events-none');
+            lb.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const img = document.getElementById('lightbox-img');
+            const lb = document.getElementById('lightbox');
+            img.classList.remove('scale-100');
+            img.classList.add('scale-95');
+            lb.classList.remove('opacity-100', 'pointer-events-auto');
+            lb.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
+
+        function prevLightbox() {
+            lbIndex = (lbIndex - 1 + lbSrcs.length) % lbSrcs.length;
+            document.getElementById('lightbox-img').src = lbSrcs[lbIndex];
+        }
+
+        function nextLightbox() {
+            lbIndex = (lbIndex + 1) % lbSrcs.length;
+            document.getElementById('lightbox-img').src = lbSrcs[lbIndex];
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbs = document.querySelectorAll('.gallery-thumb');
+            lbSrcs = Array.from(thumbs).map(t => t.getAttribute('data-src'));
+            
+            thumbs.forEach((thumb, i) => {
+                thumb.addEventListener('click', () => openLightbox(i));
+            });
+
+            document.getElementById('lightbox').addEventListener('click', (e) => {
+                if (e.target.id === 'lightbox') closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                const lb = document.getElementById('lightbox');
+                if (lb && lb.classList.contains('opacity-100')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowLeft') prevLightbox();
+                    if (e.key === 'ArrowRight') nextLightbox();
+                }
+            });
+        });
+    </script>
+
+
 
     <!-- RODAPÉ DA PÁGINA (Sexta Dobra / Conclusão) -->
     <footer class="w-full bg-stone-900 pt-20 pb-10 px-6 md:px-12 relative overflow-hidden border-t border-white/5">
@@ -668,16 +801,214 @@
             <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-stone-500">
                 <p>&copy; 2024 Andiara. Todos os direitos reservados.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="hover:text-stone-300 transition-colors">Política de Privacidade</a>
-                    <a href="#" class="hover:text-stone-300 transition-colors">Termos de Uso</a>
+                    <a href="politica-de-privacidade.html" class="intercept-load hover:text-stone-300 transition-colors">Política de Privacidade</a>
+                    <a href="termos-de-uso.html" class="intercept-load hover:text-stone-300 transition-colors">Termos de Uso</a>
                 </div>
             </div>
 
         </div>
     </footer>
 
-    <!-- Script Observer de Animação de Entrada -->
+    <!-- OVERLAY DE CARREGAMENTO GLOBAL -->
+    <style>
+        @keyframes pulseText {
+            0% { opacity: 0.15; transform: scale(0.97); }
+            50% { opacity: 1; transform: scale(1.01); text-shadow: 0 0 15px rgba(139, 94, 65, 0.2); }
+            100% { opacity: 0.15; transform: scale(0.97); }
+        }
+        .animate-pulse-text {
+            animation: pulseText 1.5s ease-in-out infinite;
+        }
+        @keyframes fadeInOverlay {
+            from { opacity: 0; backdrop-filter: blur(0px); }
+            to { opacity: 1; backdrop-filter: blur(8px); }
+        }
+        .fade-in-active {
+            display: flex !important;
+            animation: fadeInOverlay 0.6s ease-out forwards;
+        }
+    </style>
+    
+    <div id="loadingOverlay" class="fixed inset-0 bg-[#EAE8DE]/95 z-[9999] hidden flex-col items-center justify-center" style="display: none;">
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[#C27A5B] rounded-full blur-[80px]"></div>
+        </div>
+        <h2 class="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-newsreader font-light tracking-[0.2em] sm:tracking-[0.3em] uppercase text-stone-800 animate-pulse-text text-center px-4 whitespace-nowrap">
+            Curando Feridas
+        </h2>
+    </div>
+
+    <!-- Script Observer de Animação de Entrada e Lógica do Calendário 2026 -->
     <script>
+        // ======= DADOS DOS EVENTOS 2026 =======
+        const eventos2026 = [
+            {
+                id: 1,
+                mesIndex: 2, // Março (0-11)
+                dia: 14,
+                titulo: "Despertar Feminino",
+                local: "Rio de Janeiro, RJ",
+                mesExtenso: "MAR",
+                descricao: "Um dia intensivo focado no autoconhecimento e descoberta do seu potencial alinhado ao propósito divino. Vamos explorar as raízes da nossa identidade e curar crenças limitantes. O evento contará com material de apoio exclusivo, pausas para networking e um coffee break especial.",
+                imagem: "Assets/Foto1.jpeg",
+                linkIngresso: "#"
+            },
+            {
+                id: 2,
+                mesIndex: 2, // Março
+                dia: 28,
+                titulo: "Mentoria Online Grupo Fechado",
+                local: "Evento Online (Zoom)",
+                mesExtenso: "MAR",
+                descricao: "Encontro imersivo virtual para um grupo seleto de mulheres. Focado em liderança e inteligência emocional cristã. Com espaço aberto para Q&A e acompanhamento de metas.",
+                imagem: "Assets/Foto4.jpeg",
+                linkIngresso: "#"
+            },
+        ];
+
+        // Mês inicial focado (Janeiro 2026 = índice 0)
+        let dataAtual = new Date(2026, 0, 1);
+        const nomesMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+        // Função para abrir o Modal
+        function openModal(idEvento) {
+            const evento = eventos2026.find(e => e.id === idEvento);
+            if(!evento) return;
+
+            document.getElementById('modal-month').textContent = evento.mesExtenso;
+            document.getElementById('modal-day').textContent = evento.dia;
+            document.getElementById('modal-title').textContent = evento.titulo;
+            document.getElementById('modal-location').innerHTML = '<iconify-icon icon="solar:map-point-bold-duotone" class="text-[#C27A5B]"></iconify-icon> ' + evento.local;
+            document.getElementById('modal-desc').textContent = evento.descricao;
+            document.getElementById('modal-link').href = evento.linkIngresso;
+            
+            // Troca da imagem
+            const imgEl = document.querySelector('#evento-modal-content img');
+            if(imgEl) imgEl.src = evento.imagem;
+
+            // Animação de abertura
+            const modal = document.getElementById('evento-modal');
+            const content = document.getElementById('evento-modal-content');
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        // Função para fechar o Modal
+        function closeModal() {
+            const modal = document.getElementById('evento-modal');
+            const content = document.getElementById('evento-modal-content');
+            
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+        }
+
+        // Renderiza Calendário e Lista Lateral
+        function renderCalendar() {
+            const ano = dataAtual.getFullYear();
+            const mes = dataAtual.getMonth();
+
+            // Atualiza Título
+            document.getElementById('cal-month-title').textContent = `${nomesMeses[mes]} ${ano}`;
+
+            // Pega primeiro dia do mês e total de dias
+            const primeiroDia = new Date(ano, mes, 1).getDay(); // 0 (Dom) a 6 (Sab)
+            const diasNoMes = new Date(ano, mes + 1, 0).getDate();
+            const diasMesAnterior = new Date(ano, mes, 0).getDate();
+
+            // Eventos do mês atual
+            const eventosDoMes = eventos2026.filter(e => e.mesIndex === mes);
+
+            // Container do Grid
+            const grid = document.getElementById('cal-days-grid');
+            grid.innerHTML = '';
+
+            // Renderiza dias inativos do mês anterior
+            for (let i = primeiroDia - 1; i >= 0; i--) {
+                grid.innerHTML += `<div class="text-stone-300 py-2">${diasMesAnterior - i}</div>`;
+            }
+
+            // Renderiza dias do mês atual
+            for (let dia = 1; dia <= diasNoMes; dia++) {
+                // Checa se tem evento neste dia
+                const eventoNesteDia = eventosDoMes.find(e => e.dia === dia);
+
+                if (eventoNesteDia) {
+                    // Dia com Evento Destaque
+                    grid.innerHTML += `
+                        <div onclick="openModal(${eventoNesteDia.id})" class="py-2 bg-[#8B5E41] text-white rounded-lg font-bold shadow-md shadow-[#8B5E41]/30 cursor-pointer hover:scale-105 hover:-translate-y-1 transition-transform border border-[#8B5E41] relative group">
+                            ${dia}
+                            <div class="absolute -top-10 z-50 left-1/2 -translate-x-1/2 w-max px-3 py-1 bg-stone-900 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-stone-900">${eventoNesteDia.titulo}</div>
+                        </div>
+                    `;
+                } else {
+                    // Dia Comum
+                    grid.innerHTML += `<div class="py-2 hover:bg-stone-100 rounded-lg cursor-pointer transition-colors text-stone-600">${dia}</div>`;
+                }
+            }
+
+            // Renderiza dias inativos do próximo mês (para fechar a matriz 7x6 ou aproximado)
+            const totalRenderizado = primeiroDia + diasNoMes;
+            const diasRestantes = (totalRenderizado <= 35) ? (35 - totalRenderizado) : (42 - totalRenderizado);
+            for (let i = 1; i <= diasRestantes; i++) {
+                grid.innerHTML += `<div class="text-stone-300 py-2">${i}</div>`;
+            }
+
+            // LÓGICA DE EXIBIÇÃO DA LISTA DIREITA
+            const containerVazia = document.getElementById('cenario-agenda-vazia');
+            const listaEventos = document.getElementById('events-list-container');
+            listaEventos.innerHTML = '';
+
+            if (eventosDoMes.length > 0) {
+                // Tem evento: mostra cenário ativo e constrói cards
+                containerVazia.classList.add('hidden');
+                listaEventos.classList.remove('hidden');
+                listaEventos.classList.add('flex');
+
+                eventosDoMes.forEach(ev => {
+                    listaEventos.innerHTML += `
+                        <div class="group flex flex-col sm:flex-row sm:items-center py-8 border-b border-stone-300/60 hover:border-[#8B5E41] transition-colors duration-300 gap-6 lg:gap-8">
+                            <div class="shrink-0 text-center w-24">
+                                <p class="text-xs font-sans font-bold text-[#C27A5B] uppercase tracking-widest mb-1 group-hover:-translate-y-1 transition-transform">${ev.mesExtenso}</p>
+                                <p class="text-5xl font-newsreader font-light text-stone-900 group-hover:text-[#8B5E41] transition-colors">${ev.dia}</p>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-sans font-bold text-stone-800 mb-2 group-hover:text-[#8B5E41] transition-colors">${ev.titulo}</h4>
+                                <p class="text-stone-500 font-sans flex items-center gap-2">
+                                    <iconify-icon icon="solar:map-point-bold-duotone" class="text-stone-400"></iconify-icon> ${ev.local}
+                                </p>
+                            </div>
+                            <div class="shrink-0 mt-4 sm:mt-0 flex gap-3 flex-col sm:flex-row">
+                                <button onclick="openModal(${ev.id})" class="px-5 py-3 bg-white border border-stone-200 text-stone-700 rounded-full text-sm font-sans font-semibold inline-flex items-center gap-2 shadow-sm focus:outline-none hover:bg-stone-50 transition-all duration-300 group/btn2">
+                                    Saber Mais <iconify-icon icon="solar:info-circle-linear" class="group-hover/btn2:scale-110 transition-transform text-[#8B5E41]"></iconify-icon>
+                                </button>
+                                <a href="${ev.linkIngresso}" class="px-5 py-3 bg-[#8B5E41] border border-[#8B5E41] text-white rounded-full text-sm font-sans font-semibold inline-flex items-center gap-2 shadow-sm focus:outline-none hover:bg-[#6A4731] hover:border-[#6A4731] transition-all duration-300 group/btn">
+                                    Garantir Ingresso <iconify-icon icon="solar:arrow-right-linear" class="group-hover/btn:translate-x-1 transition-transform text-white"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                // Não tem evento: mostra apenas a captura de leads na lateral direita
+                listaEventos.classList.add('hidden');
+                listaEventos.classList.remove('flex');
+                containerVazia.classList.remove('hidden');
+                containerVazia.classList.add('flex');
+            }
+        }
+
+        // Navegação Mês
+        function changeMonth(delta) {
+            dataAtual.setMonth(dataAtual.getMonth() + delta);
+            // Travar no ano de 2026
+            if (dataAtual.getFullYear() < 2026) dataAtual = new Date(2026, 0, 1);
+            if (dataAtual.getFullYear() > 2026) dataAtual = new Date(2026, 11, 1);
+            renderCalendar();
+        }
+
         (function () {
             // Inicializar ícones Lucide da página se necessário
             if(window.lucide) {
@@ -697,9 +1028,34 @@
             }
 
             document.addEventListener("DOMContentLoaded", () => {
+                // Inicia Observador Interseção
                 document.querySelectorAll(".animate-on-scroll").forEach((el) => {
                     window.__inViewIO.observe(el); 
                 });
+                
+                // Inicia Calendário 2026
+                renderCalendar();
+
+                // Intercepta Links de Carregamento (.intercept-load)
+                const actionBtns = document.querySelectorAll('.intercept-load');
+                const loadingOverlay = document.getElementById('loadingOverlay');
+
+                if (actionBtns.length > 0 && loadingOverlay) {
+                    actionBtns.forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault(); 
+                            
+                            const targetUrl = btn.getAttribute('href');
+                            
+                            loadingOverlay.classList.add('fade-in-active');
+                            document.body.style.overflow = 'hidden'; // trava o scroll atual
+
+                            setTimeout(() => {
+                                window.location.href = targetUrl; 
+                            }, 2000); // 2 segundos de transição suave
+                        });
+                    });
+                }
             });
         })();
     </script>
