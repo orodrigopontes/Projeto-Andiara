@@ -69,9 +69,9 @@
     <main class="w-full max-w-[85rem] mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row gap-8 lg:gap-10 relative z-10 min-h-screen items-center lg:items-stretch">
         
         <!-- COLUNA ESQUERDA (Card Fixo/Unificado) -->
-        <div class="w-full lg:w-[40%] flex flex-col justify-between bg-[#F2EFE8] border border-white/60 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3rem] shadow-xl relative overflow-hidden group">
+        <div class="w-full lg:w-[40%] flex flex-col justify-between bg-[#F2EFE8] border border-white/60 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3rem] shadow-xl relative overflow-hidden group min-h-[35rem] sm:min-h-0">
             
-            <div class="absolute inset-x-0 top-0 h-[60%] lg:h-[65%] overflow-hidden pointer-events-none">
+            <div class="absolute inset-x-0 top-0 h-[50%] sm:h-[60%] lg:h-[65%] overflow-hidden pointer-events-none">
                 <div class="absolute inset-0 opacity-80" style="background: radial-gradient(circle at center, rgba(194,122,91,0.2) 0%, transparent 70%);"></div>
                 <img src="Assets/Foto2.jpeg" alt="Andiara Pereira Fundo" class="w-full h-full object-cover object-top mask-image-gradient group-hover:scale-105 transition-transform duration-[1.5s]" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);">
             </div>
@@ -102,42 +102,49 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full flex-1">
                 
                 <!-- Botão 1: Ir Para o Site (intercept-load incorporado na classe <a>) -->
-                <a href="home.html" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-xl text-left border border-stone-800 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full focus:outline-none focus:ring-4 focus:ring-[#8B5E41]/20 flex flex-col">
-                    <div class="absolute inset-0 bg-stone-900 z-0"></div>
-                    <img src="Assets/Foto1.jpeg" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-20 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-r from-stone-900 via-stone-900/80 to-transparent"></div>
+                <a href="home.html" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-xl text-left border border-[#C27A5B]/20 bg-white/20 backdrop-blur-3xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full focus:outline-none focus:ring-4 focus:ring-[#8B5E41]/20 flex flex-col">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#C27A5B]/5 via-white/40 to-[#8B5E41]/5 z-0"></div>
                     
-                    <div class="relative z-10 p-8 h-full flex flex-col justify-center">
-                        <div class="inline-flex items-center gap-2 bg-[#EAE8DE]/10 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full text-xs font-bold text-[#EAE8DE] tracking-wider w-max mb-4">
-                            <iconify-icon icon="solar:home-smile-angle-linear" width="16"></iconify-icon> SITE OFICIAL
+                    <div class="relative z-10 p-8 sm:p-10 h-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 w-full">
+                        <div class="flex-1">
+                            <div class="inline-flex items-center gap-2 bg-[#8B5E41]/10 border border-[#8B5E41]/20 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#8B5E41] tracking-wider mb-4">
+                                <iconify-icon icon="solar:home-smile-angle-linear" width="16"></iconify-icon> SITE OFICIAL
+                            </div>
+                            
+                            <h3 class="text-3xl md:text-4xl font-newsreader font-medium text-stone-900 mb-2 group-hover:text-[#C27A5B] transition-colors leading-tight">Ir para o Site</h3>
+                            <p class="text-stone-600 font-sans text-xs sm:text-sm max-w-sm leading-relaxed hidden sm:block">Explore toda a minha trajetória e projetos completos em nossa plataforma.</p>
+                            
+                            <div class="mt-4 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-stone-700 group-hover:text-stone-900 transition-colors">
+                                CONHECER AGORA
+                                <span class="w-8 h-8 rounded-full bg-[#8B5E41] flex items-center justify-center text-white group-hover:translate-x-2 transition-transform">
+                                    <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
+                                </span>
+                            </div>
                         </div>
                         
-                        <h3 class="text-3xl md:text-4xl font-newsreader font-medium text-white mb-2 group-hover:text-[#C27A5B] transition-colors leading-tight">Ir para o Site</h3>
-                        <p class="text-stone-300 font-sans text-sm max-w-xs leading-relaxed hidden sm:block">Explore toda a minha trajetória e projetos completos em nossa plataforma.</p>
-                        
-                        <div class="mt-4 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#E6E3D6] group-hover:text-white transition-colors">
-                            CONHECER AGORA
-                            <span class="w-8 h-8 rounded-full bg-[#8B5E41] flex items-center justify-center group-hover:translate-x-2 transition-transform">
-                                <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
-                            </span>
+                        <div class="shrink-0 relative sm:static z-0 mt-4 sm:mt-0">
+                            <iconify-icon icon="solar:globus-linear" width="120" class="absolute -right-10 -bottom-10 sm:relative sm:right-0 sm:bottom-0 text-stone-300/20 sm:text-stone-300/40 group-hover:text-[#8B5E41]/40 group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000 pointer-events-none"></iconify-icon>
                         </div>
                     </div>
                 </a>
 
                 <!-- Botão 2: O Livro (intercept-load) -->
-                <a href="home.html#livro" class="intercept-load group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-white/50 text-left hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <a href="home.html#livro" class="intercept-load group col-span-1 relative min-h-[15rem] sm:min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-white/50 text-left hover:-translate-y-2 transition-transform duration-500 flex flex-col">
                     <div class="absolute inset-0 bg-[#C27A5B] z-0"></div>
-                    <div class="absolute top-0 right-0 w-48 h-48 bg-white/20 rounded-full blur-[60px]"></div>
-                    <div class="absolute bottom-0 right-0 w-[120%] h-[60%] opacity-30 group-hover:opacity-50 transition-opacity bg-gradient-to-t from-stone-900 to-transparent"></div>
-                    <img src="Assets/Foto2.jpeg" class="absolute bottom-0 right-[-10%] w-[80%] h-auto object-cover opacity-20 sepia group-hover:scale-110 transition-transform duration-700 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-white/20 rounded-full blur-[60px] z-0"></div>
+                    <div class="absolute bottom-0 right-0 w-[120%] h-[60%] opacity-30 group-hover:opacity-50 transition-opacity bg-gradient-to-t from-stone-900 to-transparent z-0"></div>
+                    <img src="Assets/card-livro-novo.jpg" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000 z-0">
                     
-                    <div class="relative z-10 w-full h-full p-8 flex flex-col justify-between">
-                        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30 text-white mb-4">
+                    <!-- Overlay de proteção de texto para Mobile -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-stone-900/90 via-stone-900/30 to-transparent sm:hidden z-[5]"></div>
+                    
+                    <div class="relative z-10 w-full h-full p-6 sm:p-8 flex flex-col justify-between">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30 text-white mb-4">
                             <iconify-icon icon="solar:book-bookmark-minimalistic-line-duotone" width="24"></iconify-icon>
                         </div>
                         <div>
                             <p class="text-[10px] uppercase tracking-[0.2em] text-white/80 font-sans font-bold mb-1">A Obra</p>
-                            <h3 class="text-2xl font-newsreader font-medium text-white mb-4 leading-tight tracking-wide">O Livro<br>Filha Amada</h3>
+                            <h3 class="text-xl sm:text-2xl font-newsreader font-medium text-white mb-4 leading-tight tracking-wide">O Livro<br>Filha Amada</h3>
                             <span class="inline-flex items-center justify-center bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest rounded-full px-5 py-2.5 hover:bg-stone-800 transition-colors w-full sm:w-max text-center">
                                 Saber Mais
                             </span>
@@ -146,19 +153,19 @@
                 </a>
 
                 <!-- Botão 3: Meus Eventos (intercept-load) -->
-                <a href="home.html#eventos" class="intercept-load group col-span-1 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-stone-200 text-left bg-white hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <a href="home.html#eventos" class="intercept-load group col-span-1 relative min-h-[15rem] sm:min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-stone-200 text-left bg-white hover:-translate-y-2 transition-transform duration-500 flex flex-col">
                     <div class="absolute -right-16 -top-16 w-64 h-64 bg-stone-50 rounded-full"></div>
-                    <div class="absolute bottom-[-10%] right-[-10%] aspect-square w-3/4 opacity-40 group-hover:opacity-100 mix-blend-multiply group-hover:scale-110 transition-all duration-700 border-l-[1rem] border-white/50 rounded-tl-full overflow-hidden">
+                    <div class="absolute bottom-[-10%] right-[-10%] aspect-square w-1/2 sm:w-3/4 opacity-40 group-hover:opacity-100 mix-blend-multiply group-hover:scale-110 transition-all duration-700 border-l-[1rem] border-white/50 rounded-tl-full overflow-hidden">
                         <img src="Assets/Foto1.jpeg" class="w-full h-full object-cover">
                     </div>
                     
-                    <div class="relative z-10 w-full h-full p-8 flex flex-col justify-between pointer-events-none">
-                        <div class="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center text-[#8B5E41] pointer-events-auto shadow-inner border border-stone-50 mb-4">
+                    <div class="relative z-10 w-full h-full p-6 sm:p-8 flex flex-col justify-between pointer-events-none">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-stone-100 flex items-center justify-center text-[#8B5E41] pointer-events-auto shadow-inner border border-stone-50 mb-4">
                             <iconify-icon icon="solar:calendar-date-bold-duotone" width="24"></iconify-icon>
                         </div>
                         <div class="pointer-events-auto">
                             <p class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-sans font-bold mb-1">Imersão Presencial</p>
-                            <h3 class="text-2xl font-newsreader font-medium text-stone-800 mb-4 leading-tight tracking-wide">Meus<br>Eventos</h3>
+                            <h3 class="text-xl sm:text-2xl font-newsreader font-medium text-stone-800 mb-4 leading-tight tracking-wide">Meus<br>Eventos</h3>
                             <span class="inline-flex items-center justify-center bg-[#EAE8DE] text-stone-700 text-[10px] font-bold uppercase tracking-widest rounded-full px-5 py-2.5 group-hover:bg-[#8B5E41] group-hover:text-white transition-colors border border-stone-200 w-full sm:w-max text-center">
                                 Ver Datas
                             </span>
