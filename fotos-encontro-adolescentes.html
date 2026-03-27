@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fotos - Encontro de Adolescentes - Andiara Pereira</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="Assets/green-museum/assets/resource_3fa48481346f.js"></script>
+    <script src="Assets/green-museum/assets/iconify-icon_e19829e7f0e8.js"></script>
+    <script src="Assets/instagram-slides/assets/lucide_latest_2eebd0ebe8c2.js"></script>
+    <link href="Assets/coffee-co.webflow.io/assets/coffee-co_da8823da9214.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    
+    <style>
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            background-color: #E6E3D6;
+            color: #262624;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .font-newsreader { font-family: 'Newsreader', serif; }
+        .font-sans { font-family: 'Instrument Sans', sans-serif; }
+        
+        @keyframes animationIn {
+            0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+        }
+        .animate-on-scroll { animation-play-state: paused !important; }
+        .animate-on-scroll.animate { animation-play-state: running !important; }
+        
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(38,38,36,0.1) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        
+        .ds-nav {
+            position: fixed; top: 0; z-index: 100; left: 0; right: 0;
+            background-color: rgba(230, 227, 214, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(38, 38, 36, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-stone-800 selection:text-[#E6E3D6]">
+
+    <header class="ds-nav w-full px-6 md:px-12 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="home.html" class="font-newsreader text-2xl font-bold tracking-tight text-stone-900 group flex items-center gap-2">
+                <iconify-icon icon="solar:arrow-left-linear" class="text-[#C27A5B] group-hover:-translate-x-1 transition-transform"></iconify-icon>
+                Andiara Pereira
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="home.html#hero" class="text-sm font-sans font-medium text-stone-600 hover:text-[#C27A5B] transition-colors uppercase tracking-widest">Início</a>
+                <a href="home.html#eventos" class="text-sm font-sans font-medium text-stone-600 hover:text-[#C27A5B] transition-colors uppercase tracking-widest">Eventos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-24 flex-1">
+        <section id="hero-galeria" class="relative w-full py-16 overflow-hidden bg-[#E6E3D6] border-b border-[#C27A5B]/20">
+            <div class="absolute inset-0 bg-grid-pattern opacity-40 z-0 pointer-events-none"></div>
+            <div class="absolute top-10 right-0 w-96 h-96 bg-gradient-to-bl from-[#C27A5B] to-transparent rounded-full blur-[120px] opacity-10 pointer-events-none"></div>
+
+            <div class="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C27A5B]/20 bg-stone-100/30 backdrop-blur-md mb-6 shadow-sm">
+                    <iconify-icon icon="solar:gallery-wide-bold-duotone" class="text-[#C27A5B]"></iconify-icon>
+                    <span class="text-sm font-sans font-medium text-stone-700 tracking-wide uppercase">Galeria do Evento</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-newsreader font-medium text-[#C27A5B] mb-4 leading-tight">
+                    Encontro de Adolescentes <br>
+                    <span class="text-stone-800 font-light italic text-3xl md:text-4xl">Filha Amada</span>
+                </h1>
+                
+                <p class="text-lg text-stone-600 font-sans max-w-xl mx-auto">
+                    Explorando identidade e propósito divino em uma tarde especial para meninas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section class="w-full bg-[#EAE8DE] py-16 px-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20 hidden md:block"></div>
+            
+            <div class="max-w-7xl mx-auto relative z-10 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+                <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                    <!-- Images -->
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM7964.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM7964.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8002.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8002.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8020.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8020.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8033.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8033.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8194.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8194.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8331.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8331.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8443.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8443.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8501.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8501.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8543.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8543.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid border hover:border-[#C27A5B]/50 border-transparent rounded-2xl overflow-hidden cursor-pointer group relative gallery-thumb shadow-sm hover:shadow-xl transition-all duration-500" data-src="Assets/encontro de adolescentes/LCAM8595.webp">
+                        <img src="Assets/encontro de adolescentes/LCAM8595.webp" loading="lazy" decoding="async" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" alt="Encontro de Adolescentes"/>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                            <iconify-icon icon="solar:eye-linear" class="text-white opacity-0 group-hover:opacity-100 transition-opacity scale-50 group-hover:scale-100 duration-300" width="32"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <a href="home.html#eventos" class="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-stone-800/20 text-stone-900 rounded-full text-sm font-sans font-medium hover:bg-stone-900 hover:text-[#E6E3D6] transition-all duration-300 hover:shadow-lg">
+                        <iconify-icon icon="solar:arrow-left-linear" width="18"></iconify-icon>
+                        Voltar para os Eventos
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX GALERIA -->
+    <div id="lightbox" class="fixed inset-0 z-[99999] bg-stone-900/95 flex items-center justify-center backdrop-blur-md transition-opacity duration-300 opacity-0 pointer-events-none">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer">
+            <iconify-icon icon="solar:close-circle-bold" width="32"></iconify-icon>
+        </button>
+        <button onclick="prevLightbox()" class="absolute left-4 md:left-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer">
+            <iconify-icon icon="solar:arrow-left-bold" width="28"></iconify-icon>
+        </button>
+        <button onclick="nextLightbox()" class="absolute right-4 md:right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer">
+            <iconify-icon icon="solar:arrow-right-bold" width="28"></iconify-icon>
+        </button>
+        <img id="lightbox-img" src="" alt="Ampliada" decoding="async" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-transform duration-300 scale-95"/>
+    </div>
+
+    <script>
+        let lbIndex = 0;
+        let lbSrcs = [];
+
+        function openLightbox(index) {
+            lbIndex = index;
+            const img = document.getElementById('lightbox-img');
+            const lb = document.getElementById('lightbox');
+            img.src = lbSrcs[lbIndex];
+            img.classList.remove('scale-95');
+            img.classList.add('scale-100');
+            lb.classList.remove('opacity-0', 'pointer-events-none');
+            lb.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const img = document.getElementById('lightbox-img');
+            const lb = document.getElementById('lightbox');
+            img.classList.remove('scale-100');
+            img.classList.add('scale-95');
+            lb.classList.remove('opacity-100', 'pointer-events-auto');
+            lb.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
+
+        function prevLightbox() {
+            lbIndex = (lbIndex - 1 + lbSrcs.length) % lbSrcs.length;
+            document.getElementById('lightbox-img').src = lbSrcs[lbIndex];
+        }
+
+        function nextLightbox() {
+            lbIndex = (lbIndex + 1) % lbSrcs.length;
+            document.getElementById('lightbox-img').src = lbSrcs[lbIndex];
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbs = document.querySelectorAll('.gallery-thumb');
+            lbSrcs = Array.from(thumbs).map(t => t.getAttribute('data-src'));
+            
+            thumbs.forEach((thumb, i) => {
+                thumb.addEventListener('click', () => openLightbox(i));
+            });
+
+            document.getElementById('lightbox').addEventListener('click', (e) => {
+                if (e.target.id === 'lightbox') closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                const lb = document.getElementById('lightbox');
+                if (lb && lb.classList.contains('opacity-100')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowLeft') prevLightbox();
+                    if (e.key === 'ArrowRight') nextLightbox();
+                }
+            });
+        });
+
+        (function () {
+            if(window.lucide) {
+                lucide.createIcons();
+            }
+
+            const once = true;
+            if (!window.__inViewIO) {
+                window.__inViewIO = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate");
+                            if (once) window.__inViewIO.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: "0px" });
+            }
+
+            document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+                window.__inViewIO.observe(el); 
+            });
+        })();
+    </script>
+</body>
+</html>
