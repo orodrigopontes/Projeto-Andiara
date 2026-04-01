@@ -1,25 +1,6 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "andiarapeira.com.br"
-        }
-      ],
-      "destination": "/home.html"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.andiarapeira.com.br"
-        }
-      ],
-      "destination": "/home.html"
-    },
     {
       "source": "/",
       "has": [
@@ -28,7 +9,7 @@
           "value": "bio.andiarapeira.com.br"
         }
       ],
-      "destination": "/index.html"
+      "destination": "/bio.html"
     }
   ]
 }
