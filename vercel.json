@@ -13,22 +13,6 @@
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "andiarapereira.com.br"
-        }
-      ],
-      "destination": "/site.html"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.andiarapereira.com.br"
-        }
-      ],
       "destination": "/site.html"
     }
   ]
