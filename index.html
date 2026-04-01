@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- ROTEADOR BIO FALLBACK GARANTIDO -->
+    <script>
+        if (window.location.hostname === "bio.andiarapereira.com.br" && (window.location.pathname === "/" || window.location.pathname === "/index.html")) {
+            window.location.replace("/bio");
+        }
+    </script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Andiara Pereira - Restauração Espiritual</title>
