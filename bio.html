@@ -110,7 +110,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full flex-1">
                 
                 <!-- Botão 1: Ir Para o Site (intercept-load incorporado na classe <a>) -->
-                <a href="index.html" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-xl text-left border border-[#C27A5B]/20 bg-white/20 backdrop-blur-3xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full focus:outline-none focus:ring-4 focus:ring-[#8B5E41]/20 flex flex-col">
+                <a href="site.html" class="intercept-load group col-span-1 sm:col-span-2 relative min-h-[14rem] rounded-[2rem] overflow-hidden shadow-xl text-left border border-[#C27A5B]/20 bg-white/20 backdrop-blur-3xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full focus:outline-none focus:ring-4 focus:ring-[#8B5E41]/20 flex flex-col">
                     <div class="absolute inset-0 bg-gradient-to-br from-[#C27A5B]/5 via-white/40 to-[#8B5E41]/5 z-0"></div>
                     
                     <div class="relative z-10 p-8 sm:p-10 h-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 w-full">
@@ -161,7 +161,7 @@
                 </a>
 
                 <!-- Botão 3: Meus Eventos (intercept-load) -->
-                <a href="index.html#eventos" class="intercept-load group col-span-1 relative min-h-[15rem] sm:min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-stone-200 text-left bg-white hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                <a href="site.html#eventos" class="intercept-load group col-span-1 relative min-h-[15rem] sm:min-h-[14rem] rounded-[2rem] overflow-hidden shadow-lg border border-stone-200 text-left bg-white hover:-translate-y-2 transition-transform duration-500 flex flex-col">
                     <div class="absolute -right-16 -top-16 w-64 h-64 bg-stone-50 rounded-full"></div>
                     <div class="absolute bottom-[-10%] right-[-10%] aspect-square w-[65%] sm:w-3/4 opacity-40 group-hover:opacity-100 mix-blend-multiply group-hover:scale-110 transition-all duration-700 border-l-[1rem] border-white/50 rounded-tl-full overflow-hidden">
                         <img src="Assets/Foto1.jpeg" class="w-full h-full object-cover">
@@ -219,8 +219,8 @@
                     btn.addEventListener('click', (e) => {
                         e.preventDefault(); 
                         
-                        // Captura dinamicamente o link exato no qual o usuário clicou (ex: index.html#livro)
-                        const targetUrl = btn.getAttribute('href') || 'index.html';
+                        // Captura dinamicamente o link exato no qual o usuário clicou (ex: site.html#livro)
+                        const targetUrl = btn.getAttribute('href') || 'site.html';
                         
                         // Aciona a Tela de Overlay
                         loadingOverlay.classList.add('fade-in-active');
